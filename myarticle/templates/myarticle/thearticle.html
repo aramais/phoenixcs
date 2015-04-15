@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block pagetitle %} {{thearticle.title}} {% endblock %}
+{% block title %} {{thearticle.title}} {% endblock %}
+
+{% block content %}
+{{thearticle.text|safe}}
+<br>
+Tags:
+{% for pair in thearticle.tagedge_set.all %}
+<a href = "{% url 'myarticle:listByTag' pair.tag.id %}">{{pair.tag.text}}</a>,
+{% endfor %}
+{% endblock %}

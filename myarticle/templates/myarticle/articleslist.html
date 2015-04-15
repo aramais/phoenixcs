@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Articles {% endblock %}
+{% block title %} Articles {% endblock %}
+
+{% block content %}
+
+{% for article in articles %}
+{% block before_articles_list %}{% endblock %}
+<h2>
+  <a href="{%url 'myarticle:detailedArticle' article.id %}">
+    {{ article.title|upper}}
+  </a>
+</h2>
+<p>{{ article.text|safe|truncatewords:"100"}}</p>
+{% endfor %}
+{% endblock %}
