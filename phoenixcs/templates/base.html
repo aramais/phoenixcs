@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" href={{STATIC_URL}}favicon.ico type="image/x-icon">
+<title>Case Community Online - Phoenix & Partners</title>
+
+<link rel="stylesheet" type="text/css" media="all" href={{ STATIC_URL }}style.css>
+</head>
+<style>
+body{
+	margin:0 !important;
+}
+.preload{
+	width:0px;
+	height:0px;
+	position:absolute;
+	z-index:-2;
+	display:none;
+	visibility:hidden;
+}
+
+</style>
+
+ПРИВЕТ СТАРИНА {{user.username}}
+
+
+<body>
+<header class="header_block">
+	<div class="header">
+		<div class="main">
+			<div class="logo">
+                <a href="{% url 'home' %}">
+				<img src={{STATIC_URL}}pp_small.svg alt="Hi!" />
+				</a>
+			</div>
+			<div class="search_block">
+				<input type="text" class="search_input" placeholder="Введите Ваш поисковый запрос">
+			</div>	
+			<a href="{% url 'userena_signin' %}" class="enter">
+			    Sign in
+			</a>
+			<a href="{% url 'userena_signup' %}" class="enter">
+			    Sign up
+			</a>
+
+
+		</div>
+	</div>
+
+	<div class="post_header">
+		<div class="main">
+			<div class="navi">
+				Новости
+			</div>
+			<div class="navi">
+				Обсуждения
+			</div>
+			<div class="navi">
+				Проекты
+			</div>
+			<div class="navi">
+				FAQ
+			</div>
+			<div class="navi">
+				О проекте
+			</div>
+		</div>
+	</div>
+</header>
+
+        <h1>{% block title %}Welcome to my block{% endblock %}</h1>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>
