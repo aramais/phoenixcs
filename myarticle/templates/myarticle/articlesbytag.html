@@ -1,4 +1,5 @@
 {% extends 'myarticle/articleslist.html' %}
-{% block title %} Articles by tag "{{tag.text}}" {% endblock %}
+{% block pagetitle %} Articles by tag "{{tag.text}}" {% endblock %}
+{% block articletitle %} Articles by tag "{{tag.text}}" {% endblock %}
 
 {% block before_articles_list %}<div>See also other tags or <a href="{%url 'myarticle:listArticles' %}">all articles</a></div>{% endblock %}

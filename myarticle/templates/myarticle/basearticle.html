@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="block">
+		<div class="main">
+			<div class="breads">
+				<a href="/">Главная</a> >> Новости</div>
+				<div class="sidebar">
+					<div class="header_bar">Категории статей</div>
+					<div class="categories">
+						<div class="category">
+							Как попасть в консалтинг?
+							<em class="q">2</em>
+						</div>
+						<div class="category">
+							Тренинги Phoenix Case School
+							<em class="q">2</em>
+						</div>
+						<div class="category">
+							Полезный практических материал
+							<em class="q">2</em>
+						</div>
+						<div class="category">
+							Кейс-чемпионаты
+							<em class="q">2</em>
+						</div>
+						<div class="category">
+							Обзоры
+							<em class="q">2</em>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<h1>{% block articletitle %} Ты чё, лох? Это виртуальный класс {% endblock %}</h1>
+					{% block articleslist %} {% endblock %}
+				</div>
+		</div>
+	</div>
+{% endblock %}

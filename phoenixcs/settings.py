@@ -105,6 +105,18 @@ STATICFILES_DIRS = (
 	"/home/aramais/devdevdev/phoenixcs/phoenixcs/static",
 ) 
 
+MEDIA_ROOT = "C:/Users/David/YandexDisk/dev/phoenixcs/phoenixcs/static/"
+MEDIA_URL = "/phoenixcs/static/"
+
+# David. Had problems with hashing.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
+
+
 # List of finder classes that know how to find static files in 
 # various locations. 
 STATICFILES_FINDERS = ( 

@@ -1,16 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'myarticle/basearticle.html' %}
 {% block pagetitle %} Articles {% endblock %}
-{% block title %} Articles {% endblock %}
+{% block articletitle %} Статьи {% endblock %}
 
-{% block content %}
-
-{% for article in articles %}
+{% block articleslist %}
 {% block before_articles_list %}{% endblock %}
-<h2>
-  <a href="{%url 'myarticle:detailedArticle' article.id %}">
-    {{ article.title|upper}}
-  </a>
-</h2>
-<p>{{ article.text|safe|truncatewords:"100"}}</p>
+{% for article in articles %}
+<a href="{%url 'myarticle:detailedArticleByUrl' article.url %}" class="news_block">
+	<div class="hidder"></div>
+	<div class="news_sample">
+		<img class = "img_news" src="{{STATIC_URL}}{{article.image}}">
+		<div class="news_header">
+			<div class="header_news">{{article.title|upper}}</div>
+		</div>
+		<div class="news_date">16.02.2014</div>
+		<div class="news_announce">
+			{{ article.text|safe|truncatewords:"55"}}
+		</div>
+	</div>
+</a>
 {% endfor %}
 {% endblock %}

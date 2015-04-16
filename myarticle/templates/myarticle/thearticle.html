@@ -1,12 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'myarticle/basearticle.html' %}
 {% block pagetitle %} {{thearticle.title}} {% endblock %}
-{% block title %} {{thearticle.title}} {% endblock %}
 
-{% block content %}
-{{thearticle.text|safe}}
+{% block articletitle %} {{thearticle.title}} {% endblock %}
+
+
+{% block articleslist %} 
+<img src="{{STATIC_URL}}{{thearticle.image}}">
+<div class="article_text">
+	{{thearticle.text|safe}}
+</div>
 <br>
-Tags:
-{% for pair in thearticle.tagedge_set.all %}
-<a href = "{% url 'myarticle:listByTag' pair.tag.id %}">{{pair.tag.text}}</a>,
-{% endfor %}
+ {% if thearticle.tagedge_set.all%}
+	Тэги:
+	<ul>
+	{% for pair in thearticle.tagedge_set.all %}
+	<li><a href = "{% url 'myarticle:listByTagText' pair.tag.text %}">{{pair.tag.text}}</a></li>
+	{% endfor %}
+	</ul>
+{% endif %}
 {% endblock %}

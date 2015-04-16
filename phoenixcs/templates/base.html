@@ -22,8 +22,6 @@ body{
 
 </style>
 
-ПРИВЕТ СТАРИНА {{user.username}}
-
 
 <body>
 <header class="header_block">
@@ -69,9 +67,29 @@ body{
 	</div>
 </header>
 
-        <h1>{% block title %}Welcome to my block{% endblock %}</h1>
-        {% block content %}
+{% block content %}
 
-        {% endblock %}
+{% endblock %}
+
+<footer class="footer block">
+	{% block footer %}
+	<div class="main">
+		<div class="footer_line">
+			<a class="footer_text" href="/">Главная</a>
+			<a class="footer_text" href="/news">Новости и статьи</a>
+			<a class="footer_text" href="/my_page">Личный кабинет</a>
+			<a class="footer_text" href="/registration">Регистрация</a>
+		</div>	
+		<div class="footer_line">
+			<span class="footer_text"><b>© 2015 Phoenix & Partners</b></span>
+			<a class="footer_text" href="/about">О компании</a>
+			<a class="footer_text" href="/security">Конфиденциальность</a>
+			<a class="footer_text" href="/partners">Партнерство</a>
+			<a class="footer_text" href="/contacts">Контакты</a>
+		</div>
+	</div>
+	{% endblock %}
+</footer>
+
     </body>
 </html>
