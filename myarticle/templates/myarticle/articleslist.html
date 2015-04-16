@@ -4,19 +4,5 @@
 
 {% block articleslist %}
 {% block before_articles_list %}{% endblock %}
-{% for article in articles %}
-<a href="{%url 'myarticle:detailedArticleByUrl' article.url %}" class="news_block">
-	<div class="hidder"></div>
-	<div class="news_sample">
-		<img class = "img_news" src="{{STATIC_URL}}{{article.image}}">
-		<div class="news_header">
-			<div class="header_news">{{article.title|upper}}</div>
-		</div>
-		<div class="news_date">16.02.2014</div>
-		<div class="news_announce">
-			{{ article.text|safe|truncatewords:"55"}}
-		</div>
-	</div>
-</a>
-{% endfor %}
+	{% include "myarticle/articleslistwidget.html" %}
 {% endblock %}

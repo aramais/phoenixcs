@@ -357,6 +357,10 @@ a{
 	border-left: 1px #ddd solid;
 	height: auto;
 }
+.content.headimage{
+	width: 730px;	
+	height: auto;
+}
 
 .header_bar{
 	position: relative;

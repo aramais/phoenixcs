@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="teaser">
+	<div class="main" style="padding-top:70px">
+		<div class="description">
+			<b>Case Community Online</b>
+		</div>	
+		<div class="counters">
+			<div class="counter_block">
+				<div class="counter">
+					<span style="font-size:60px">871</span></br>
+					студент уже присоединились к нам
+				</div>
+			</div>
+			<div class="counter_block">
+				<div class="counter">
+					<span style="font-size:60px">736</span></br>
+					часов практических тренингов
+				</div>
+			</div>
+			<div class="counter_block">
+				<div class="counter">
+					<span style="font-size:60px">134 000</span></br>
+					мегабайт полезной информации
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="news">
+	<div class="main" lang="ru">
+		<center><div class="h1_pseudo">Последние новости</div></center>
+			{% include "myarticle/articleslistwidget.html" %}
+		<div class="show_more">
+			<div class="show_more_enter">Показать еще</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

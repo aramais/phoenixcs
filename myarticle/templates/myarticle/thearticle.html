@@ -5,7 +5,7 @@
 
 
 {% block articleslist %} 
-<img src="{{STATIC_URL}}{{thearticle.image}}">
+<img class = "headimage" src="{{STATIC_URL}}{{thearticle.image}}">
 <div class="article_text">
 	{{thearticle.text|safe}}
 </div>
@@ -18,4 +18,7 @@
 	{% endfor %}
 	</ul>
 {% endif %}
+<div>
+	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %} {{thearticle.date}}
+</div>
 {% endblock %}

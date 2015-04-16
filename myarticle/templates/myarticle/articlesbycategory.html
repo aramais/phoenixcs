@@ -1,0 +1,11 @@
+{% extends 'myarticle/articleslist.html' %}
+{% block pagetitle %} Статьи в категории "{{category.text}}" {% endblock %}
+{% block articletitle %} Статьи в категории "{{category.text}}" {% endblock %}
+
+{% block before_articles_list %}
+	{% if not articles %}
+		<div> В этой категории пока нет статей. Попробуйте заглянуть на следующей неделе! </div>
+	{% endif %}
+	
+	<div> Смотрите также статьи в других категориях или  <a href="{%url 'myarticle:listArticles' %}"> все статьи </a></div>
+{% endblock %}

@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'accounts',
 	'myarticle',
+	'clear_cache',
 )
 
 AUTHENTICATION_BACKENDS = (

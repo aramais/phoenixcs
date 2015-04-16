@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from myarticle.views import newsIndex
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^accounts/', include('userena.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'phoenixcs.views.home', name='home'),
+    #url(r'^$', 'phoenixcs.views.home', name='home'),
+	url(r'^$', newsIndex, name='home'),
     # url(r'^blog/', include('blog.urls')),
 	url(r'^articles/', include('myarticle.urls', namespace = 'myarticle')),
 	url(r'^news/', include('myarticle.urls', namespace = 'myarticle')),
