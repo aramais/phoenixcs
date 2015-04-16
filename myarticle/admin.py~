@@ -17,7 +17,7 @@ class TagEdgeInline(admin.StackedInline):
 
 class ArticleAdmin(admin.ModelAdmin):
 	inlines = [TagEdgeInline]
-	form = DefaultArticleAdminForm
+	#form = DefaultArticleAdminForm
 
 admin.site.register(DefaultArticle, ArticleAdmin)
 admin.site.register(DefaultTag)
