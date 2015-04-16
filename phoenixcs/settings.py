@@ -24,7 +24,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = ('/home/aramais/devdevdev/phoenixcs/phoenixcs/templates',)
+TEMPLATE_DIRS = ('C:/Users/David/dj/phoenixcs/phoenixcs/templates',
+	'C:/Users/David/YandexDisk/dev/phoenixcs/phoenixcs/templates',
+	'/home/aramais/devdevdev/phoenixcs/phoenixcs/templates',)
+#TEMPLATE_DIRS = ('phoenixcs/phoenixcs/templates',)
 
 ALLOWED_HOSTS = []
 
@@ -43,6 +46,7 @@ INSTALLED_APPS = (
     'guardian',
     'easy_thumbnails',
     'accounts',
+	'myarticle',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -96,7 +100,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIRS = ( 
-    "/home/aramais/devdevdev/phoenixcs/phoenixcs/static",
+    "C:/Users/David/dj/phoenixcs/phoenixcs/static",
+	"C:/Users/David/YandexDisk/dev/phoenixcs/phoenixcs/static",
+	"/home/aramais/devdevdev/phoenixcs/phoenixcs/static",
 ) 
 
 # List of finder classes that know how to find static files in 

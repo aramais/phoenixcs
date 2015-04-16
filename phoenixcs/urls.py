@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'phoenixcs.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+	url(r'^articles/', include('myarticle.urls', namespace = 'myarticle')),
 )
