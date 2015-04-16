@@ -79,13 +79,6 @@ body{
 			<a class="footer_text" href="/my_page">Личный кабинет</a>
 			<a class="footer_text" href="/registration">Регистрация</a>
 		</div>	
-		<div class="footer_line">
-			<span class="footer_text"><b>© 2015 Phoenix & Partners</b></span>
-			<a class="footer_text" href="/about">О компании</a>
-			<a class="footer_text" href="/security">Конфиденциальность</a>
-			<a class="footer_text" href="/partners">Партнерство</a>
-			<a class="footer_text" href="/contacts">Контакты</a>
-		</div>
 	</div>
 	{% endblock %}
 </footer>

@@ -484,7 +484,7 @@ MAIN
 }
 
 .headimage{
-	max-width: 740px;
+	width: 740px;
 	height: auto;
 }
 
