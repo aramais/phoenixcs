@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# хуй!
 from django.contrib import admin
 from myarticle.models import Article, Tag, TagEdge, Category
 
