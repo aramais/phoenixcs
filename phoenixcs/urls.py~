@@ -1,4 +1,4 @@
-#!encoding:utf-8
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
@@ -15,4 +15,5 @@ urlpatterns = patterns('',
 	url(r'^news/', include('myarticle.urls', namespace = 'myarticle')),
 	#url(r'^admin_tools/', include('admin_tools.urls')), #balovstvo odno tol'ko!
 	url(r'^redactor/', include('redactor.urls')),
+	url(r'^comments/', include('django_comments.urls')),
 )

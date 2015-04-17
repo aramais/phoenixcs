@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+	'django_comments',
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',

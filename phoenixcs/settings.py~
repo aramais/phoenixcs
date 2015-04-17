@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#!encoding:utf-8
 # русские комменьф!
 """
 Django settings for phoenixcs project.
@@ -35,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+	'django.contrib.comments',
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',

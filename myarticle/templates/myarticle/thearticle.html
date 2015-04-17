@@ -24,4 +24,25 @@
 <div>
 	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %} {{thearticle.date}}
 </div>
+
+
+<div class = "comments_block">
+{% load comments %}
+{% get_comment_count for thearticle as comment_count %}
+</br>
+{% if comment_count > 0 %}
+Число комментариев к статье: уже {{comment_count}}.
+<div class = "comments_container"> 
+{% render_comment_list for thearticle %}
+</div>
+{% else %}
+К статье пока не оставили комментариев. Будьте первым!
+{% endif %}
+</br>
+Оставьте свой комментарий:
+<div class = "newcomment">
+{% render_comment_form for thearticle %}
+</div>
+</div>
+
 {% endblock %}
