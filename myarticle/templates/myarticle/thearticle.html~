@@ -9,7 +9,7 @@
 <div class="article_text">
 	{{thearticle.text|safe}}
 </div>
-<br>
+</br>
  {% if thearticle.tagedge_set.all%}
 <div>
 	Тэги:
@@ -19,6 +19,7 @@
 	{% endfor %}
 	</ul>
 </div>
+</br>
 {% endif %}
 <div>
 	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %} {{thearticle.date}}

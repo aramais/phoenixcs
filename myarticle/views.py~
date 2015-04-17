@@ -25,7 +25,8 @@ def listByTag(request, tag_id):
 	
 def listByTagText(request, tag_text):
 	tag = Tag.objects.get(text = tag_text)
-	articles = [edge.article for edge in tag.tagedge_set.all()]
+	st = tag.tagedge_set.all()
+	articles = [edge.article for edge in st]
 	return render(request, 'myarticle/articlesbytag.html', {'articles': articles, 'tag':tag, 'cats':getCategoriesList()})
 	
 def listByCategory(request, category_id):

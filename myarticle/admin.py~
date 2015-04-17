@@ -1,12 +1,12 @@
 from django.contrib import admin
-from myarticle.models import DefaultArticle, DefaultTag, TagEdge, Category
+from myarticle.models import Article, Tag, TagEdge, Category
 
 from django import forms
 from redactor.widgets import RedactorEditor
 
-class DefaultArticleAdminForm(forms.ModelForm):
+class ArticleAdminForm(forms.ModelForm):
     class Meta:
-        model = DefaultArticle
+        model = Article
         widgets = {
            'text': RedactorEditor(),
         }
@@ -17,9 +17,9 @@ class TagEdgeInline(admin.StackedInline):
 
 class ArticleAdmin(admin.ModelAdmin):
 	inlines = [TagEdgeInline]
-	#form = DefaultArticleAdminForm
+	form = ArticleAdminForm
 
-admin.site.register(DefaultArticle, ArticleAdmin)
-admin.site.register(DefaultTag)
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Tag)
 admin.site.register(TagEdge)
 admin.site.register(Category)
