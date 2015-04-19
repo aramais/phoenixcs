@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+	'fluent_comments',
+	'crispy_forms',
 	'django_comments',
     #'admin_tools.theming',
     #'admin_tools.menu',

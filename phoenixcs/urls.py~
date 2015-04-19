@@ -16,4 +16,5 @@ urlpatterns = patterns('',
 	#url(r'^admin_tools/', include('admin_tools.urls')), #balovstvo odno tol'ko!
 	url(r'^redactor/', include('redactor.urls')),
 	url(r'^comments/', include('django_comments.urls')),
+	url(r'^blog/comments/', include('fluent_comments.urls')),
 )

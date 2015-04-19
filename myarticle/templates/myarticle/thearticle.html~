@@ -25,9 +25,10 @@
 	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %} {{thearticle.date}}
 </div>
 
-
 <div class = "comments_block">
 	{% load comments %}
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fluent_comments/css/ajaxcomments.css" />
+	<script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
 	<div class="comments_container">
 		<div class="h3_pseudo">Комментарии</div>
 		{% get_comment_count for thearticle as comment_count %}
