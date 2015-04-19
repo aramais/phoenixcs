@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+	'userena.contrib.umessages',
 	'fluent_comments',
 	'crispy_forms',
 	'django_comments',

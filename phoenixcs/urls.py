@@ -17,4 +17,5 @@ urlpatterns = patterns('',
 	url(r'^redactor/', include('redactor.urls')),
 	url(r'^comments/', include('django_comments.urls')),
 	url(r'^blog/comments/', include('fluent_comments.urls')),
+	url(r'^messages/', include('userena.contrib.umessages.urls')),
 )
