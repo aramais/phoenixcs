@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
+from accounts.forms import EditProfileFormExtra1
 from myarticle.views import newsIndex
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^accounts/(?P<username>[\@\.\w-]+)/edit/$',  'userena.views.profile_edit', {'edit_profile_form': EditProfileFormExtra1},name='userena_profile_edit'),
     url(r'^accounts/', include('userena.urls')),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^$', 'phoenixcs.views.home', name='home'),

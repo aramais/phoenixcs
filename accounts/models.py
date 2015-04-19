@@ -10,5 +10,22 @@ class MyProfile(UserenaBaseProfile):
                                 unique=True,
                                 verbose_name=_('user'),
                                 related_name='my_profile')
-    favourite_snack = models.CharField(_('favourite snack'),
-                                       max_length=5)
+
+
+class Profile_Experience(models.Model):
+    profile = models.ForeignKey(MyProfile)
+    company = models.CharField(max_length=200)
+    jobstart = models.DateField()
+    jobend = models.DateField()
+    jobdescription = models.TextField()
+
+class Project_Experience(models.Model):
+    profile = models.ForeignKey(MyProfile)
+    project = models.CharField(max_length=200)
+    projectstart = models.DateField()
+    projectend = models.DateField()
+    projectdescription = models.TextField()
+
+class Awards(models.Model):
+    profile = models.ForeignKey(MyProfile)
+    award = models.CharField(max_length=200)
