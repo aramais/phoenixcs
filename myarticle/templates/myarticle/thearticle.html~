@@ -27,20 +27,62 @@
 
 
 <div class = "comments_block">
-{% load comments %}
-{% get_comment_count for thearticle as comment_count %}
-</br>
-{% if comment_count > 0 %}
-Число комментариев к статье: уже {{comment_count}}.
-<div class = "comments_container"> 
-{% render_comment_list for thearticle %}
+	{% load comments %}
+	<div class="comments_container">
+		<div class="h3_pseudo">Комментарии</div>
+		{% get_comment_count for thearticle as comment_count %}
+		{% if comment_count > 0 %}
+		<p class="small_font" style="margin:5px 0px">{{comment_count}} комментариев</p>
+		{% else %}
+		К статье пока не оставили комментариев. Будьте первым!
+		{% endif %}
+	</div>
+	{% get_comment_list for thearticle as comment_list %}
+	{% for comment in comment_list %}
+	<div class="comments_container">
+		<div class="comment_block">
+			<div class="header_comment_block">
+				<div class="author_comment_photo">
+					<img src="{{STATIC_URL}}phoenixcs_logo_short.jpg" height="50">
+				</div>
+				<div class="header_comment">
+					<h3 class="author medium_font">{{comment.user_name}}</h3>
+					<div class="date small_font">{{comment.submit_date}}</div>
+				</div>
+				{% if user == comment.user %}
+				<div class = "delete_comment_button">
+  					<a href="{% url 'comments-delete' comment.id %}">Удалить</a> 
+				</div>
+				{% endif %}
+			</div>
+			<div class="text">
+				{{comment.comment}}	
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	<div class = "comments_container border_top20">
+		{% if user.is_authenticated %}
+		{% get_comment_form for thearticle as form %}
+		<form action="{% comment_form_target %}" method="POST">
+			{% csrf_token %}
+			<div class="comments_input_block border_top20">
+				<textarea type="text" class="comments_input" placeholder="Оставьте Ваш комментарий" id="id_comment" maxlength="3000" name="comment"> </textarea>
+			</div>
+			{{ form.content_type }}
+			{{ form.object_pk }}
+			{{ form.timestamp }}
+			{{ form.security_hash }}
+			<input type="hidden" name="next" value="{% url  'myarticle:detailedArticleByUrl' thearticle.url %}" />
+			<div class="comments_enter_block">
+				<input type="submit" class="button comments_button" value="Комментировать" id="id_submit" />
+			</div>
+		</form>
+		{% else %}
+		</br>
+		<p>Пожалуйста, <a href="{% url 'userena_signin' %}">войдите</a> или <a href="{% url 'userena_signup' %}">зарегистрируйтесь</a>, чтобы оставить комментарий.</p>
+		{% endif %}
+	</div>
 </div>
-{% else %}
-К статье пока не оставили комментариев. Будьте первым!
-{% endif %}
-</br>
-Оставьте свой комментарий:
-<div class = "newcomment">
-{% render_comment_form for thearticle %}
-</div>
+
 {% endblock %}

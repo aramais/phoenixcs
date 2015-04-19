@@ -33,15 +33,19 @@ body{
 			</div>
 			<div class="search_block">
 				<input type="text" class="search_input" placeholder="Введите Ваш поисковый запрос">
-			</div>	
+			</div>
+			{% if user.is_authenticated %}
+			<a href="{% url 'userena_signout' %}" class="enter">
+			    Выход
+			</a>
+			{% else %}
 			<a href="{% url 'userena_signin' %}" class="enter">
-			    Sign in
+			    Вход
 			</a>
 			<a href="{% url 'userena_signup' %}" class="enter">
-			    Sign up
+			    Регистрация
 			</a>
-
-
+			{% endif %}
 		</div>
 	</div>
 

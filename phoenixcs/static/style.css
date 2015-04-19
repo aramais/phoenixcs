@@ -1017,6 +1017,11 @@ textarea.comments_input{
 	overflow: hidden;
 }
 
+.delete_comment_button{
+	position: relative;
+	right:0px;
+}
+
 /*
 ====================
 СТРАНИЦА РЕГИСТРАЦИИ

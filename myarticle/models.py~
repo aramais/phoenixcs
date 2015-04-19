@@ -22,6 +22,8 @@ class Article(models.Model):
 	def __unicode__(self):
 		#return '<Article "' + str(self.id) + '">'
 		return '<Article "' + self.title + '">'
+	def get_absolute_url(self):
+		return "{% url  'myarticle:detailedArticleByUrl'" + self.url +  " %}"
 
 class Tag(models.Model):
 	text = models.CharField(max_length=200, unique = True)
@@ -32,6 +34,6 @@ class Tag(models.Model):
 class TagEdge(models.Model):
 	article = models.ForeignKey(Article)
 	tag = models.ForeignKey(Tag)
-	def __str__(self):
+	def __unicode__(self):
 		#return '<Tag-Article pair "' + str(self.article.id) + '"-"' + str(self.tag.id) + '">'
 		return '<Tag-Article pair "' + self.article.title + '"-"' + self.tag.text + '">'

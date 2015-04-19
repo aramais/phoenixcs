@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="shortcut icon" href={{STATIC_URL}}favicon.ico type="image/x-icon">
-<title>Case Community Online - Phoenix & Partners</title>
+<title>{% block pagetitle %}Case Community Online - Phoenix & Partners{% endblock %}</title>
 <link rel="stylesheet" type="text/css" media="all" href={{ STATIC_URL }}style.css>
 </head>
 <style>
@@ -33,15 +33,19 @@ body{
 			</div>
 			<div class="search_block">
 				<input type="text" class="search_input" placeholder="Введите Ваш поисковый запрос">
-			</div>	
+			</div>
+			{% if user.is_authenticated %}
+			<a href="{% url 'userena_signout' %}" class="enter">
+			    Выход
+			</a>
+			{% else %}
 			<a href="{% url 'userena_signin' %}" class="enter">
-			    Sign in
+			    Регистрация
 			</a>
 			<a href="{% url 'userena_signup' %}" class="enter">
-			    Sign up
+			    Вход
 			</a>
-
-
+			{% endif %}
 		</div>
 	</div>
 

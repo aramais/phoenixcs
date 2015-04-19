@@ -484,7 +484,7 @@ MAIN
 }
 
 .headimage{
-	width: 740px;
+	max-width: 740px;
 	height: auto;
 }
 
@@ -1015,6 +1015,11 @@ textarea.comments_input{
 	height: 50px;
 	border-radius: 50px;
 	overflow: hidden;
+}
+
+.delete_comment_button{
+	position: relative;
+	right:0px;
 }
 
 /*
