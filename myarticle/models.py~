@@ -2,6 +2,7 @@
 # русские коменты
 from django.db import models
 from datetime import date
+from django.core.urlresolvers import reverse
 
 
 class Category(models.Model):
@@ -14,7 +15,7 @@ class Article(models.Model):
 	title = models.CharField(max_length=200)
 	url = models.SlugField(max_length=50, unique = True)
 	text = models.TextField()
-	image = models.ImageField(upload_to='images')
+	image = models.ImageField(upload_to='images', default = 'images/default.jpg')
 	date = models.DateField(default = date.today())
 	author = models.CharField(max_length=200, default = "author unknown")
 	category = models.ForeignKey(Category, default = 0)
@@ -23,7 +24,8 @@ class Article(models.Model):
 		#return '<Article "' + str(self.id) + '">'
 		return '<Article "' + self.title + '">'
 	def get_absolute_url(self):
-		return "{% url  'myarticle:detailedArticleByUrl'" + self.url +  " %}"
+		#hardcoded url!!! need to use 'reverse', but problems with cyclical import
+		return '/news/' + self.url
 
 class Tag(models.Model):
 	text = models.CharField(max_length=200, unique = True)

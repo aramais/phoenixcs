@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# русские комменьф!
+# русские комменты!
 """
 Django settings for phoenixcs project.
 
@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+	'endless_pagination',
 	'userena.contrib.umessages',
 	'fluent_comments',
 	'crispy_forms',

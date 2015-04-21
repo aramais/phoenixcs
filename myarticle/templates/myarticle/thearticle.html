@@ -15,7 +15,7 @@
 	Тэги:
 	<ul>
 	{% for pair in thearticle.tagedge_set.all %}
-	<li><a href = "{% url 'myarticle:listByTagText' pair.tag.text %}">{{pair.tag.text}}</a></li>
+	<li><a href = "{% url 'myarticle:listByTagText' tag_text=pair.tag.text %}">{{pair.tag.text}}</a></li>
 	{% endfor %}
 	</ul>
 </div>
