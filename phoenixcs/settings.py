@@ -26,7 +26,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,"phoenixcs/templates"),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,"phoenixcs/templates"),os.path.join(BASE_DIR,"templates"))
 
 ALLOWED_HOSTS = []
 
@@ -118,6 +118,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static")
 MEDIA_URL = "/phoenixcs/static/"
 
 # David. Had problems with hashing.
+# You meant caching?
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
