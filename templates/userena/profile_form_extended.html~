@@ -36,7 +36,7 @@
 	{% csrf_token %}
     {{formSetProjExp.management_form }}
     <div class = "table2">
-        {% for form in formSetProоExp %}
+        {% for form in formSetProjExp %}
          <div class = "tr">
         {{ form.as_table }}
         </div>

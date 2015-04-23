@@ -5,7 +5,7 @@
 <link rel="shortcut icon" href={{STATIC_URL}}favicon.ico type="image/x-icon">
 <title>{% block pagetitle %}Case Community Online - Phoenix & Partners{% endblock %}</title>
 <link rel="stylesheet" type="text/css" media="all" href={{ STATIC_URL }}style.css>
-<script src="{{STATIC_URL}}/jquery-latest.js"></script>
+<script src="{{STATIC_URL}}jquery-latest.js"></script>
 <script src="{{STATIC_URL}}scripts.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
@@ -35,6 +35,9 @@ body{
 			</div>
 			<div class="search_block">
 				<input type="text" class="search_input" placeholder="Введите Ваш поисковый запрос">
+			</div>
+			<div class="search_button" type="submit">
+				Найти
 			</div>
 			{% if user.is_authenticated %}
 			<a href="{% url 'userena_signout' %}" class="enter">

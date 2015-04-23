@@ -144,3 +144,17 @@ def profile_edit_extended(request, username, edit_profile_form=EditProfileForm, 
 
 	return ExtraContextTemplateView.as_view(template_name=template_name, extra_context=extra_context)(request)
 
+@secure_required
+@permission_required_or_403('change_profile', (get_profile_model(), 'user__username', 'username'))
+def profile_detail_extended(request, username, edit_profile_form=EditProfileForm, template_name='userena/profile_detail_extended.html', success_url=None,extra_context=None, **kwargs):
+	user = get_object_or_404(get_user_model(), username__iexact=username)
+	profile = get_user_profile(user=user)
+	if not extra_context: extra_context = dict()
+	extra_context['profile'] = profile
+	extra_context['profExpData'] = Profile_Experience.objects.filter(profile = profile)
+	extra_context['projExpData'] = Project_Experience.objects.filter(profile = profile)
+	extra_context['awardsData'] = Awards.objects.filter(profile = profile)
+	return ExtraContextTemplateView.as_view(template_name=template_name, extra_context=extra_context)(request)
+
+
+
