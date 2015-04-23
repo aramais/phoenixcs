@@ -26,7 +26,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,"phoenixcs/templates"),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,"phoenixcs/templates"),os.path.join(BASE_DIR,"templates"))
 
 ALLOWED_HOSTS = []
 
@@ -57,6 +57,8 @@ INSTALLED_APPS = (
 	#'clear_cache',
 	'redactor',
 )
+
+COMMENTS_APP = 'fluent_comments'
 
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'

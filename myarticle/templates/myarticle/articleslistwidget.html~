@@ -17,6 +17,7 @@
 	</div>
 </a>
 {% endfor %}
+{% show_more %}
 {% comment %}{% show_more %}{% endcomment %}
 {% show_pages %}
 

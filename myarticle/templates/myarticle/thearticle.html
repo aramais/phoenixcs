@@ -29,6 +29,7 @@
 	{% load comments %}
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fluent_comments/css/ajaxcomments.css" />
 	<script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
+
 	<div class="comments_container">
 		<div class="h3_pseudo">Комментарии</div>
 		{% get_comment_count for thearticle as comment_count %}
@@ -38,9 +39,19 @@
 		К статье пока не оставили комментариев. Будьте первым!
 		{% endif %}
 	</div>
+<script>
+function deletecomment(id) {
+	$.ajax({
+		url: '/news/deletecomment/' + id,
+	}).done(function(msg){
+		element = document.getElementById("comment" + id)
+		element.parentNode.removeChild(element);
+	})
+}
+</script>
 	{% get_comment_list for thearticle as comment_list %}
 	{% for comment in comment_list %}
-	<div class="comments_container">
+	<div class="comments_container" id = "comment{{comment.id}}">
 		<div class="comment_block">
 			<div class="header_comment_block">
 				<div class="author_comment_photo">
@@ -52,16 +63,18 @@
 				</div>
 				{% if user == comment.user %}
 				<div class = "delete_comment_button">
-  					<a href="{% url 'comments-delete' comment.id %}">Удалить</a> 
+  					{%comment%}<a href="{% url 'myarticle:deleteMyComment' comment_id=comment.id %}">Удалить</a> {%endcomment%}
+					<a onclick="javascript: deletecomment({{comment.id}});return false;" href="">Удалить</a>
 				</div>
 				{% endif %}
 			</div>
-			<div class="text">
+			<div class="text" >
 				{{comment.comment}}	
 			</div>
 		</div>
 	</div>
 	{% endfor %}
+
 	<div class = "comments_container border_top20">
 		{% if user.is_authenticated %}
 		{% get_comment_form for thearticle as form %}

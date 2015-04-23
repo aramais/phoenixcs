@@ -5,6 +5,8 @@
 <link rel="shortcut icon" href={{STATIC_URL}}favicon.ico type="image/x-icon">
 <title>{% block pagetitle %}Case Community Online - Phoenix & Partners{% endblock %}</title>
 <link rel="stylesheet" type="text/css" media="all" href={{ STATIC_URL }}style.css>
+<script src="{{STATIC_URL}}/jquery-latest.js"></script>
+<script src="{{STATIC_URL}}scripts.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
 body{
@@ -40,10 +42,10 @@ body{
 			</a>
 			{% else %}
 			<a href="{% url 'userena_signin' %}" class="enter">
-			    Регистрация
+			    Вход
 			</a>
 			<a href="{% url 'userena_signup' %}" class="enter">
-			    Вход
+			    Регистрация
 			</a>
 			{% endif %}
 		</div>

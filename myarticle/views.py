@@ -1,8 +1,12 @@
-from django.shortcuts import get_object_or_404, render, render_to_response
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render, render_to_response, redirect
+from django.http import HttpResponse, Http404
 from django.template import RequestContext, loader, Template
 from myarticle.models import Article, Tag, TagEdge, Category
 from endless_pagination.decorators import page_template
+
+from django.contrib.auth.decorators import login_required
+from django_comments.views.moderation import perform_delete
+import django_comments as comments
 
 def getCategoriesList():
 	return [{'category':category, 'narticles':len([a for a in category.article_set.all() if a.visible])} for category in Category.objects.all()]
@@ -34,3 +38,21 @@ def detailedArticleByUrl(request, article_url):
 	
 def newsIndex(request):
 	return render(request, 'myarticle/newsindex.html', {'articles': [a for a in Article.objects.all() if a.visible]})
+
+@login_required
+def delete_my_comment(request, comment_id):
+	comment = get_object_or_404(comments.get_model(), pk=comment_id)
+	if comment.user == request.user:
+		if request.method == "POST":
+			pass
+		else:
+			pass
+		perform_delete(request, comment)
+		return HttpResponse('Delete comment ok')
+	else:
+		raise Http404
+
+def ajaxTestPage(request):
+	return render(request, 'myarticle/ajaxtest.html', {"ololo":"lol"})
+def ajaxTestOk(request):
+	return HttpResponse('hello ajax world!')
