@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     #url(r'^$', 'phoenixcs.views.home', name='home'),
 	url(r'^$', newsIndex, name='home'),
     # url(r'^blog/', include('blog.urls')),
-	url(r'^articles/', include('myarticle.urls', namespace = 'myarticle')),
+	#url(r'^articles/', include('myarticle.urls', namespace = 'myarticle')),
 	url(r'^news/', include('myarticle.urls', namespace = 'myarticle')),
 	#url(r'^admin_tools/', include('admin_tools.urls')), #balovstvo odno tol'ko!
 	url(r'^redactor/', include('redactor.urls')),

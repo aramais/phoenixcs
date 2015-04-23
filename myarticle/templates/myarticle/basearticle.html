@@ -9,7 +9,7 @@
 			<div class="header_bar">Категории статей</div>
 			<div class="categories">
 				{% for category in cats %}
-				<a href = "{%url 'myarticle:listByCategory' category.category.id %}">
+				<a href = "{%url 'myarticle:listByCategory' category_id=category.category.id %}">
 					<div class="category">
 						{{category.category.text}}
 						<em class="q">{{category.narticles}}</em>
@@ -24,4 +24,11 @@
 		</div>
 	</div>
 </div>
+{% block js %}
+{{ block.super }}
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+<script>//$.endlessPaginate();</script>
+{% endblock %}
+
 {% endblock %}
