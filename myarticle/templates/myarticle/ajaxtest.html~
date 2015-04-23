@@ -1,0 +1,37 @@
+<head><title> Ajax test</title>
+<script>
+// vanilla JS
+function getHTTPRequestObject() {
+  var xmlHttpRequest;
+  if (!xmlHttpRequest && typeof XMLHttpRequest != 'undefined') {
+    try {
+      xmlHttpRequest = new XMLHttpRequest();
+    } catch (exception) {
+      xmlHttpRequest = false;
+    }
+  }
+  return xmlHttpRequest;
+}
+var httpRequester = getHTTPRequestObject();
+httpRequester.open("GET", 'http://localhost:8000/news/ato',true);
+function processResponse() {
+if (httpRequester.readyState==4 && httpRequester.status==200){
+ alert(httpRequester.responseText)
+}
+}
+httpRequester.onreadystatechange = processResponse;
+//httpRequester.send()
+</script>
+<script src="{{STATIC_URL}}jquery-2.1.3.js"></script>
+<script>
+$.ajax({
+  url: 'http://localhost:8000/news/deletecomment/19',
+  method: "GET"
+}).done(function(msg){
+ alert("msg")
+})
+</script>
+ </head>
+Hello world
+
+

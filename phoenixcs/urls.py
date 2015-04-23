@@ -7,6 +7,7 @@ from myarticle.views import newsIndex
 urlpatterns = patterns('',
     # Examples:
     url(r'^accounts/(?P<username>[\@\.\w-]+)/edit/$',  'userena.views.profile_edit', {'edit_profile_form': EditProfileFormExtra1},name='userena_profile_edit'),
+    url(r'^accounts/(?P<username>[\@\.\w-]+)/edit/extra/$',  'accounts.views.profile_edit_extended',name='profile_edit_extended'),
     url(r'^accounts/', include('userena.urls')),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^$', 'phoenixcs.views.home', name='home'),

@@ -102,11 +102,11 @@ def profile_edit_extended(request, username, edit_profile_form=EditProfileForm, 
 				anobject.profile = profile
 			formSetProfExp.save(commit = True)
 		
-		if formSetProjExp.is_valid():
-			formSetProjExp.save(commit = False)
-			for anobject in formSetProjExp.new_objects:
+		if formSetAwards.is_valid():
+			formSetAwards.save(commit = False)
+			for anobject in formSetAwards.new_objects:
 				anobject.profile = profile
-			formSetProjExp.save(commit = True)
+			formSetAwards.save(commit = True)
 		
 		if formSetAwards.is_valid():
 			formSetAwards.save(commit = False)
