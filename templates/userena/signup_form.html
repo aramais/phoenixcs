@@ -1,0 +1,42 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+
+
+
+{% block title %}{% trans "Signup" %}{% endblock %}
+{% block content %}
+<form action="" method="post">
+<center><h1>Присоединяйся к кейс-сообществу<h1></center>
+	<div class="any_text">
+		<div class="outline_text">
+			<p>Пожалуйста, заполните свои данные для регистрации на сайте <b>Phoenix&Partners</b>.</p>
+			<p>Укажите свой <b>e-mail</b>, который будет являться вашим Логином для входа на сайта, и придумайте себе <b>Пароль</b>.</p>
+		</div>
+  {% csrf_token %}
+  <fieldset>
+    <legend>{% trans "Signup" %}</legend>
+    {{ form.non_field_errors }}
+    {% for field in form %}
+    {{ field.errors }}
+    {% comment %} Displaying checkboxes differently {% endcomment %}
+    {% if field.name == 'tos' %}
+    <p class="checkbox">
+    <!-- <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label> -->
+    <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
+    </p>
+    {% else %}
+    <p>
+    {{ field.label_tag }} 
+    {{ field }}
+    </p>
+    {% endif %}
+    {% endfor %}
+  </fieldset>
+  <!-- <input type="submit" value="{% trans "Signup"%}" /> -->
+  				<div class="any_text">
+					Нажимая на кнопку "Зарегистрироваться" вы соглашаетесь с <a href="#" class="text_link">Условиями предоставления услуг</a>, <a href="#" class="text_link">Политикой конфиденциальности</a> и соглашетесь на обратку своих данных.
+				</div>
+  <button class="button" value="{% trans "Signup"%}" style="margin-top:20px">Зарегистрироваться</button>
+  </div>
+</form>
+{% endblock %}

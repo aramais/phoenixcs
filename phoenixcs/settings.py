@@ -58,8 +58,6 @@ INSTALLED_APPS = (
 	'redactor',
 )
 
-COMMENTS_APP = 'fluent_comments'
-
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'
 
@@ -121,6 +119,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static")
 MEDIA_URL = "/phoenixcs/static/"
 
 # David. Had problems with hashing.
+# You meant caching?
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
