@@ -47,11 +47,14 @@
 						Сейчас:
 					</div>
 					<ul class="exp"><!--3 строки-->
-						<li>Associate - Viamedix,</li>
+		                {% for anexperience in profExpData %}
+		                	<li>{{ anexperience.company }},</li>
+		                {% endfor %}
+<!-- 						<li>Associate - Viamedix,</li>
 						<li>CEO - AnalizMarket,</li>
 						<li>CEO - Medclub,</li>
 						<li>CEO - HBC Group,</li>
-						<li>Co-founder - Phoenix&amp;Partners</li>
+						<li>Co-founder - Phoenix&amp;Partners</li> -->
 					</ul>
 				</div>
 				<div class="exp_block">
@@ -129,7 +132,7 @@
 		{% for anexperience in profExpData %}
 		<div class="inblock">
 			<h3>{{anexperience.company}}</h3>
-			<h4>{{anexperience.jobdescription}}</h4>
+			<h4>{{anexperience.position}}</h4>
 			<div class="date">
 				{{anexperience.jobstart}} - {{anexperience.jobend}}
 			</div>

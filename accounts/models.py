@@ -12,18 +12,24 @@ class MyProfile(UserenaBaseProfile):
                                 related_name='my_profile')
 
 
+# ОБНАРУЖЕНА НЕПРИЯТНАЯ БАГА! ПРИ ДОБАВЛЕНИИ ПОЛЕЙ ПОЧЕМУ-ТО У СТАРЫХ ОБЪЕКТОВ НЕ ИЗМЕНЯЮТСЯ ДОБАВЛЕННЫЕ ПОЛЯ!!
+
+
 class Profile_Experience(models.Model):
     profile = models.ForeignKey(MyProfile)
     company = models.CharField('Компания', max_length=200)
+    position = models.CharField('Позиция', max_length=200)
     jobstart = models.DateField('Начало работы')
     jobend = models.DateField('Окончание работы')
     jobdescription = models.TextField('Описание работы')
+    # isworkingnow = models.BooleanField('По сей день',default=False)
     def __unicode__(self):
     	return "Work experience at " + self.company
 
 class Project_Experience(models.Model):
     profile = models.ForeignKey(MyProfile)
     project = models.CharField('Проект', max_length=200)
+    position = models.CharField('Позиция', max_length=200)
     projectstart = models.DateField('Начало проекта')
     projectend = models.DateField('Окончание проекта')
     projectdescription = models.TextField('Описание роли в проекте')

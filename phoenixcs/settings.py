@@ -156,3 +156,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  
 EMAIL_HOST_USER = 'phoenixandpartnersnoreply@gmail.com'  
 EMAIL_HOST_PASSWORD = 'atanas1234'  
+
+# pip install django-userena
+# pip install python2.7-dev
+# pip install django-wysiwyg-redactor
+# pip install django-fluent-comments
+# pip install django-contrib-comments
+# pip install django-endless-pagination

@@ -2,9 +2,16 @@
 {% load i18n %}
 
 
+{% load static %}
 
 {% block title %}{% trans "Signup" %}{% endblock %}
 {% block content %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/style.css"/>
+{% endblock %}
+<div class="reg_back">
+	<div class="main reg_block">
+		<div class="reg_container">	
 <form action="" method="post">
 <center><h1>Присоединяйся к кейс-сообществу<h1></center>
 	<div class="any_text">
@@ -39,4 +46,7 @@
   <button class="button" value="{% trans "Signup"%}" style="margin-top:20px">Зарегистрироваться</button>
   </div>
 </form>
+		</div>
+	</div>
+</div>	
 {% endblock %}

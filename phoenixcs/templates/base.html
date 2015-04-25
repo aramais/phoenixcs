@@ -40,6 +40,7 @@ body{
 				Найти
 			</div>
 			{% if user.is_authenticated %}
+			<a href = "accounts/{{user.username}}" class="enter">  Hola,{{user.username}}! </a>
 			<a href="{% url 'userena_signout' %}" class="enter">
 			    Выход
 			</a>
