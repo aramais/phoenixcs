@@ -34,11 +34,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-	'endless_pagination',
-	'userena.contrib.umessages',
-	'fluent_comments',
-	'crispy_forms',
-	'django_comments',
+    'endless_pagination',
+    'userena.contrib.umessages',
+    'fluent_comments',
+    'crispy_forms',
+    'django_comments',
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',
@@ -53,9 +53,9 @@ INSTALLED_APPS = (
     'guardian',
     'easy_thumbnails',
     'accounts',
-	'myarticle',
-	#'clear_cache',
-	'redactor',
+    'myarticle',
+    #'clear_cache',
+    'redactor',
 )
 
 REDACTOR_OPTIONS = {'lang': 'en'}
@@ -112,11 +112,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR,"phoenixcs/static"),
+    os.path.join(BASE_DIR,"phoenixcs/static"),
 ) 
-
-MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static")
-MEDIA_URL = "/phoenixcs/static/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static/media/")
+MEDIA_URL = "/static/media/"
 
 # David. Had problems with hashing.
 # You meant caching?
@@ -163,3 +162,4 @@ EMAIL_HOST_PASSWORD = 'atanas1234'
 # pip install django-fluent-comments
 # pip install django-contrib-comments
 # pip install django-endless-pagination
+# git config --global core.excludesfile .gitignore
