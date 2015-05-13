@@ -1,3 +1,10 @@
+/*
+ПРИМЕЧАНИЯ:
+z-index:999; - настроен у всплывашек типа "написать сообщение" или "вход"
+z-index:500; - настроен у меню типа тех, что вызываются у профиля
+*/
+
+
 @charset "UTF-8";
 /* CSS Document */
 
@@ -187,6 +194,20 @@ MAIN
 	width:1020px;
 }
 
+.cf:after,.cf:before {
+	content: "";
+	display: table
+}
+
+.cf:after {
+	clear: both
+}
+
+.cf {
+	zoom: 1;
+	position: relative
+}
+
 .logo{
 	position: relative;
 	display: block;
@@ -258,6 +279,167 @@ MAIN
 	background-color:#f16823;
 	color: #fff
 }
+
+/*ОТОБРАЖЕНИЕ В ШАПКЕ ЗАЛОГИНЕННОГО ПОЛЬЗОВАТЕЛЯ*/
+
+.loged_ava{
+	position: relative;
+	float: right;
+	display: block;
+	margin: 10px 15px 10px 0px;
+	width: 45px;
+	height: 45px;
+	border-radius: 45px;
+	overflow: hidden;
+	background: #a8a8a8;
+}
+
+.loged_icon{
+	position: relative;
+	float: right;
+	display: block;
+	margin: 15px 10px 15px 0px;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
+.opacity07{
+	opacity: .7
+}
+
+.opacity07:hover{
+	opacity: 1;
+}
+
+.message_notif{
+	position: absolute;
+	display: block;
+	float: none;
+	opacity: 1 !important;
+	background: #f16823;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+	top:0;
+	margin: -5px 0px 0px 20px;
+}
+
+/*МЕНЮ НАСТРОЕК*/
+
+#profile_menu_block{
+	position: absolute;
+	display: none;
+	right: 0px;
+	top: 65px;
+	background: #a8a8a8;
+	width:200px;
+	height: auto;
+	color: #fff;
+	z-index: 500;
+	-webkit-box-shadow: 4px 4px 12px 0px rgba(50, 50, 50, 0.6);
+	-moz-box-shadow: 4px 4px 12px 0px rgba(50, 50, 50, 0.6);
+	box-shadow: 4px 4px 12px 0px rgba(50, 50, 50, 0.6);
+}
+
+#profile_menu_block:after{
+	content:"";
+	position: absolute;
+	right:18px;
+	top:-10px;
+	width:0;
+	height:0;
+	border-right:10px solid transparent;
+	border-bottom:10px solid #a8a8a8;
+	border-left:10px solid transparent
+}
+
+#profile_menu_block li{
+	float: left;
+	list-style-type: none;
+	display: inline;
+	border-bottom: 1px solid #939393;
+	padding: 10px;
+	margin-left:0;
+	width: 180px;
+	font-size: 14px;
+}
+
+#profile_menu_block a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#profile_menu_block li:hover{
+	background: rgba(255,255,255,.2)
+}
+
+/*END*/
+
+/*ВСПЛЫВАШКА ВХОДА - ЛОГИН/ПАРОЛЬ*/
+
+#login_block{
+	position: absolute;
+	display: none;
+	left: 760px;
+	width: 260px;
+	/*height: 300px;*/
+	top: 105px;
+	background: rgba(255,255,255,1);
+	z-index: 9999;
+	border-radius: 6px;
+	-webkit-box-shadow: 0px -1px 34px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px -1px 34px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px -1px 34px 1px rgba(0,0,0,0.75);
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.log_header{
+	position: relative;
+	float: left;
+	display: block;
+	margin:30px 10px 0px 20px;
+	color: #666;
+	font-weight: bold;
+}
+
+.log_input{
+	position: relative;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	vertical-align: middle;
+	width:200px;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+
+.log_enter_button{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.log_link{
+	position: relative;
+	display: block;
+	margin: 0px auto;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.log_link:hover{
+	color: #f16823;
+}
+
+/*END*/
 
 .post_header{
 	position: relative;
@@ -483,11 +665,6 @@ MAIN
 	height: auto;
 }
 
-.headimage{
-	max-width: 740px;
-	height: auto;
-}
-
 .header_bar{
 	position: relative;
 	display: block;
@@ -580,6 +757,63 @@ MAIN
 	display: block;
 	margin-top:20px;
 }
+.articles_comments_block{
+	margin: 20px 0px 0px 0px !important;
+}
+
+.article_date{
+	position: relative;
+	display: block;
+	color: #666;
+	float: right;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100%;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.article_author{
+	position: relative;
+	display: block;
+	color: #666;
+	float: left;
+	font-size: 12px;
+	width: 50%;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #a8a8a8;
+}
+
+.article_tags{
+	position: relative;
+	display:inline-block;
+	border: 1px #a8a8a8 solid;
+	border-radius: 6px;
+	width: 720px;
+	padding: 10px;
+	margin-top: 20px;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.article_tags p{
+	font-weight: bold;
+	float: left;
+	margin: 0;
+}
+
+.article_tags li a{
+	float: left;
+	list-style-type: none;
+	display: inline;
+	padding-right: 10px;
+	color: #666;
+}
+
+.article_tags li a:hover{
+	color: #f16823;
+}
 
 /*
 ==============
@@ -610,7 +844,7 @@ img.blur {
 .person_block, .public_block{
 	position: relative;
 	margin-top: -500px;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.25);
 	z-index: 2;
 	width: 100%;
 	height:500px;
@@ -644,7 +878,7 @@ img.blur {
 	width:200px;
 	height: 200px;
 	border-radius: 200px;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.1);
 	overflow: hidden;
 	text-align: center;
 }
@@ -684,6 +918,21 @@ img.blur {
 
 .message_button:hover, .public_button:hover{
 	background: #02870e;
+}
+
+.thats_u{ /*Это появляется, когда ты на свою страницу заходишь */
+	position: relative;
+	display: block;
+	margin: 20px 30px auto;
+	padding:20px 15px;
+	color:#fff;
+	background: rgba(0,0,0,.2);
+	/*width: 230px;*/
+	text-align: center;
+	font-size: 20px;
+	font-family: arial, tahoma, helvetica, sans-serif;
+	border-radius: 3px;
+	border: 1px solid #fff;
 }
 
 .personal_detail_block, .publical_detail_block{
@@ -827,6 +1076,250 @@ img.blur {
 	width: 100%;
 }
 
+ul.skills_list{
+	position: relative;
+	display: inline-block;
+}
+
+.skills_list li{
+	float: left;
+	list-style-type: none;
+	display: inline;
+	padding: 3px 8px;
+	margin: 5px 5px 0px;
+	border-radius: 3px;
+	background: #f16823;
+	color: #fff;
+}
+
+/*
+==================================
+СТРАНИЦА ПОЛЬЗОВАТЕЛЬСКОГО ПРОФИЛЯ
+==================================
+*/
+
+.mypage_thats_u{
+	margin-top: 30px;
+}
+
+.mypage_personal_stat_block{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.mypage_edit_button{
+	margin-top: 55px;
+}
+
+.mypage_label{
+	position: absolute;
+	float: left;
+	background: #f16823;
+	padding: 10px 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: bold;
+	z-index: 2;
+	margin-left: -20px;
+	margin-top: 10px;
+}
+
+/*
+=======================================
+СТРАНИЦА ПОЛЬЗОВАТЕЛЯ (СКРЫТЫЙ ПРОФИЛЬ)
+=======================================
+*/
+
+.green_hover{
+	background: #f16823
+}
+
+.green_hover:hover{
+	background: #be4203;
+}
+
+/*
+===============================
+СТРАНИЦА РЕДАКТИРОВАНИЯ ПРОФИЛЯ
+===============================
+*/
+
+.edit_personal_detail_block{
+	padding: 20px;
+	width: 580px;
+}
+
+.edit_name_n_tag{
+	width: 100%;
+}
+
+.edit_photo{
+	position: relative;
+	color: #a8a8a8;
+	font-size: 200px;
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	cursor: pointer;
+}
+
+.edit_photo:hover{
+	color: #fff;
+	background-color: #a8a8a8;
+}
+
+.edit_background{
+	text-align: center;
+	background: none;
+	margin-top: 50px;
+}
+
+.edit_background_page{
+	margin: 0 auto;
+	display: inline-block !important;
+}
+
+.input_big{
+	position: relative;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	vertical-align: middle;
+	height: 45px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 10px 0 10px 0;
+	font-size: 18px;
+}
+
+.input_standard{
+	position: relative;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	vertical-align: middle;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 5px 0 5px 0;
+	font-size: 14px;
+}
+
+.input_small{
+	position: relative;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	vertical-align: middle;
+	height: 22px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 5px 0 5px 0;
+	font-size: 10px;
+}
+
+.edit_name{
+	float: left;
+	margin-right: 10px;
+	width: 240px;
+}
+
+.edit_personal_contacts{
+	width: 150px;
+	float: none;
+}
+
+.edit_company, .edit_position{
+	width: 250px;
+}
+
+.edit_date_exp{
+	font-size: 10px !important;
+	height: 28px !important;
+	margin:5px 0 5px 0 !important;
+	padding:0px 5px 0px 5px !important;
+	width: 100px !important;
+}
+
+.edit_desc_exp {
+	display: block;
+	position: relative;
+	line-height: 16px;
+	height: 68px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 10px 0px 10px 0px;
+	-webkit-transition: margin-right .1s;
+	transition: margin-right .1s;
+	overflow: hidden;
+}
+
+.edit_add{
+	position: relative;
+	margin:0px auto;
+	display: block;
+	cursor: pointer;
+	margin: 30px 0px 20px;
+	color: #a8a8a8;
+	font-weight: bold;
+}
+
+.edit_add:hover{
+	color: #666;
+}
+
+
+/*
+=============================
+ИНТЕРФЕЙС НАПИСАНИЯ СООБЩЕНИЯ
+=============================
+*/
+
+#message_block_back{
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	z-index: 998;
+	top: 0;
+}
+
+.message_block{
+	position: relative;
+	display: block;
+	padding: 20px;
+	width: 610px;
+	height: auto;
+	top:50%;
+	margin-top: -142px;
+	left: 50%;
+	margin-left: -325px;
+	background: #fff;
+	z-index: 999;
+}
+
+.header_message_block{
+	position: relative;
+	padding: 10px 15px 10px;
+	display: inline-block;
+	margin: 0px 0px 0px -27px;
+	background: #f16823;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.message_input{
+	display: block;
+	width: 588px !important;
+	border: 1px solid #a8a8a8 !important;
+	margin: 20px 0px !important;
+	height: 100px !important;
+}
 
 /*
 ======
@@ -966,6 +1459,7 @@ a.footer_text:hover{
 textarea.comments_input{
 	height: 48px;
 	padding:10px;
+	resize:none;
 }
 
 .comments_enter_block{
@@ -1006,6 +1500,21 @@ textarea.comments_input{
 	float: left;
 }
 
+.reply_comment_block{
+	position: relative;
+	display: block;
+	float: right;
+	margin-top:10px;
+	text-align: right;
+	color: #a8a8a8;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.reply_comment_block:hover{
+	color: #666;
+}
+
 .author_comment_photo{
 	position: relative;
 	display: block;
@@ -1017,9 +1526,18 @@ textarea.comments_input{
 	overflow: hidden;
 }
 
-.delete_comment_button{
+.delete_comment{
 	position: relative;
-	right:0px;
+	display: block;
+	float: right;
+	color: #a8a8a8;
+	font-weight: bold;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.delete_comment:hover{
+	color: #666;
 }
 
 /*
@@ -1032,7 +1550,7 @@ textarea.comments_input{
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 800px;
+	height: 850px;
 	background: url(/materials/reg_back.jpg) center no-repeat;
 }
 
@@ -1136,5 +1654,63 @@ select.reg_class{
 .plc_black:-ms-input-placeholder      {color:#333;}
 
 
+/*
+=====================================
+СТРАНИЦА ВХОДА ПОЛЬЗОВАТЕЛЯ (logpage)
+=====================================
+*/
 
+.logpage_block_back{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 650px;
+	background: url(/login/login_back.jpg) center no-repeat;
+}
+
+.logpage_block{
+	position: absolute;
+	display: block;
+	padding: 20px;
+	top: 50%;
+	margin-top: -150px;
+	left: 50%;
+	margin-left: -300px;
+	width: 560px;
+	height: auto;
+	background: rgba(255,255,255,.8);
+}
+
+.login_sector{
+	position: relative;
+	display: block;
+	width: 260px;
+	height: 100%;
+	border-right: 1px solid #a8a8a8;
+	padding-right: 20px;
+}
+
+.logpage_login{
+	width: 240px;
+}
+
+.logpage_element_header{
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.login_social_block{
+	position: relative;
+	float: left;
+	display: table;
+	height: 100%;
+}
+
+.login_social_content{
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+
+}
 

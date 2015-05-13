@@ -30,7 +30,7 @@ body{
 		<div class="main">
 			<div class="logo">
                 <a href="{% url 'home' %}">
-				<img src={{STATIC_URL}}pp_small.svg alt="Hi!" />
+				<img src="{{STATIC_URL}}pp_small.svg" alt="Hi!" />
 				</a>
 			</div>
 			<div class="search_block">
@@ -40,10 +40,31 @@ body{
 				Найти
 			</div>
 			{% if user.is_authenticated %}
-			<a href = "accounts/{{user.username}}" class="enter">  Hola,{{user.username}}! </a>
+			<!--<a href = "accounts/{{user.username}}" class="enter">  Hola,{{user.username}}! </a>
 			<a href="{% url 'userena_signout' %}" class="enter">
 			    Выход
+			</a>-->
+
+			<div class="loged_icon" id="profile_settings">
+				<img src="{{STATIC_URL}}icons/settings.svg" width="35px" class="opacity07">
+			</div>
+				<noindex>
+					<ul id="profile_menu_block">
+						<a href="accounts/{{user.username}}"><li>Мой профиль</li></a>
+						<a href="/id/1/edit"><li>Редактировать профиль</li></a>
+						<li>Настройки аккаунта</li>
+						<a href="{% url 'userena_signout' %}" class="enter"><li>Выйти</li></a>
+					</ul>
+				</noindex>
+			
+			<a href="#" class="loged_icon">
+				<img src="{{STATIC_URL}}icons/message.svg" width="35px" class="opacity07">
+				<div class="message_notif">1</div>
 			</a>
+			<a href="accounts/{{user.username}}" class="loged_ava">
+				<img src="/id/1/main.jpg" width="45px">
+			</a>
+
 			{% else %}
 			<a href="{% url 'userena_signin' %}" class="enter">
 			    Вход
