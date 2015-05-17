@@ -25,7 +25,7 @@
 	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %} {{thearticle.date}}
 </div>
 
-<div class = "comments_block">
+<div class = "comments_block articles_comments_block">
 	{% load comments %}
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fluent_comments/css/ajaxcomments.css" />
 	<script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
@@ -52,7 +52,7 @@ function deletecomment(id) {
 	{% get_comment_list for thearticle as comment_list %}
 	{% for comment in comment_list %}
 	<div class="comments_container" id = "comment{{comment.id}}">
-		<div class="comment_block articles_comments_block">
+		<div class="comment_block">
 			<div class="header_comment_block">
 				<div class="author_comment_photo">
 					<img src="{{STATIC_URL}}phoenixcs_logo_short.jpg" height="50">
