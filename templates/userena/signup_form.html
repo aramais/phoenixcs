@@ -20,7 +20,6 @@
 			<p>Укажите свой <b>e-mail</b>, который будет являться вашим Логином для входа на сайта, и придумайте себе <b>Пароль</b>.</p>
 		</div>
   {% csrf_token %}
-  <fieldset>
     <h3>{% trans "Signup" %}</h3>
     {{ form.non_field_errors }}
     {% for field in form %}
@@ -38,7 +37,6 @@
     </p>
     {% endif %}
     {% endfor %}
-  </fieldset>
   <!-- <input type="submit" value="{% trans "Signup"%}" /> -->
   				<div class="any_text">
 					Нажимая на кнопку "Зарегистрироваться" вы соглашаетесь с <a href="#" class="text_link">Условиями предоставления услуг</a>, <a href="#" class="text_link">Политикой конфиденциальности</a> и соглашетесь на обратку своих данных.
