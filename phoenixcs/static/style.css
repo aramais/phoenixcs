@@ -1545,7 +1545,7 @@ textarea.comments_input{
 .delete_comment:hover{
 	color: #666;
 }
-
+	
 /*
 ====================
 СТРАНИЦА РЕГИСТРАЦИИ
@@ -1556,8 +1556,9 @@ textarea.comments_input{
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 850px;
+	height: auto;
 	background: url(materials/reg_back.jpg) center no-repeat;
+	padding-bottom: 30px;
 }
 
 .reg_block{
