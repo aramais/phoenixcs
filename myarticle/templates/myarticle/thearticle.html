@@ -52,7 +52,7 @@ function deletecomment(id) {
 	{% get_comment_list for thearticle as comment_list %}
 	{% for comment in comment_list %}
 	<div class="comments_container" id = "comment{{comment.id}}">
-		<div class="comment_block">
+		<div class="comment_block articles_comments_block">
 			<div class="header_comment_block">
 				<div class="author_comment_photo">
 					<img src="{{STATIC_URL}}phoenixcs_logo_short.jpg" height="50">
@@ -64,7 +64,7 @@ function deletecomment(id) {
 				{% if user == comment.user %}
 				<div class = "delete_comment_button">
   					{%comment%}<a href="{% url 'myarticle:deleteMyComment' comment_id=comment.id %}">Удалить</a> {%endcomment%}
-					<a onclick="javascript: deletecomment({{comment.id}});return false;" href="">Удалить</a>
+					<a class="delete_comment" onclick="javascript: deletecomment({{comment.id}});return false;" href="">&times</a>
 				</div>
 				{% endif %}
 			</div>
