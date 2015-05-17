@@ -1557,7 +1557,7 @@ textarea.comments_input{
 	display: block;
 	width: 100%;
 	height: 850px;
-	background: url(/materials/reg_back.jpg) center no-repeat;
+	background: url(materials/reg_back.jpg) center no-repeat;
 }
 
 .reg_block{
