@@ -11,8 +11,8 @@
 </div>
 </br>
  {% if thearticle.tagedge_set.all%}
-<div>
-	Тэги:
+<div class="article_tags">
+	<p>Тэги:</p>
 	<ul>
 	{% for pair in thearticle.tagedge_set.all %}
 	<li><a href = "{% url 'myarticle:listByTagText' tag_text=pair.tag.text %}">{{pair.tag.text}}</a></li>
