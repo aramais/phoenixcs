@@ -6,7 +6,9 @@
 <a href="{%url 'myarticle:detailedArticleByUrl' article.url %}" class="news_block">
 	<div class="hidder"></div>
 	<div class="news_sample">
-		<img class = "img_news" src="{{STATIC_URL}}{{article.image}}">
+		<div class = "img_news">
+			<img class="img_news_settings" src="{{STATIC_URL}}{{article.image}}">
+		</div>
 		<div class="news_header">
 			<div class="header_news">{{article.title|upper}}</div>
 		</div>

@@ -547,6 +547,12 @@ MAIN
 	position: relative;
 	height:200px;
 	width: 318px;
+	overflow: hidden;
+}
+
+.img_news_settings{
+	width: 318px;
+	min-height: 200px;
 }
 
 .news_header{
