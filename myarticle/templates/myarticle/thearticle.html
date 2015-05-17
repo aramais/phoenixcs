@@ -63,7 +63,7 @@ function deletecomment(id) {
 				</div>
 				{% if user == comment.user %}
 				<div class = "delete_comment_button">
-  					{%comment%}<a href="{% url 'myarticle:deleteMyComment' comment_id=comment.id %}">Удалить</a> {%endcomment%}
+  					{%comment%}<a class="delete_comment" href="{% url 'myarticle:deleteMyComment' comment_id=comment.id %}">&times</a> {%endcomment%}
 					<a class="delete_comment" onclick="javascript: deletecomment({{comment.id}});return false;" href="">&times</a>
 				</div>
 				{% endif %}
