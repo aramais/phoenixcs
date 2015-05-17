@@ -12,7 +12,7 @@
 </div>
 </br>
 <div class="article_author">Автор:<strong>
-	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>,{% endif %}</strong>
+	{% if thearticle.author != "author unknown"%}<i>{{thearticle.author}}</i>{% endif %}</strong>
 </div>
  {% if thearticle.tagedge_set.all%}
 <div class="article_tags">
