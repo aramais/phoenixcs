@@ -1672,7 +1672,7 @@ select.reg_class{
 	display: block;
 	width: 100%;
 	height: 650px;
-	background: url(/login/login_back.jpg) center no-repeat;
+	background: url(materials/login_back.jpg) center no-repeat;
 }
 
 .logpage_block{
