@@ -91,7 +91,7 @@ function deletecomment(id) {
 			{{ form.security_hash }}
 			<input type="hidden" name="next" value="{% url  'myarticle:detailedArticleByUrl' thearticle.url %}" />
 			<div class="comments_enter_block">
-				<input type="submit" class="button comments_button" value="Комментировать" id="id_submit" />
+				<button type="submit" class="button comments_button" value="Комментировать" id="id_submit">Комментировать</button>
 			</div>
 		</form>
 		{% else %}
