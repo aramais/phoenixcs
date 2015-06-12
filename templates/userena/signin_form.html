@@ -21,8 +21,8 @@
           </p>
           {% else %}
           <p>
-          <div class="logpage_element_header">{{ field.label_tag }}</div></br>
-          <div class="input_standard logpage_login">{{ field }}</div>
+          <div class="logpage_element_header">{{ field.label_tag }}</div>
+          {{ field }}
           </p>
           {% endif %}
           {% endfor %}
