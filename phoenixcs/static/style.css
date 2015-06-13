@@ -212,7 +212,7 @@ MAIN
 	position: relative;
 	display: block;
 	float: left;
-	margin: 5px 10px 5px;
+	margin: 5px 10px 0px;
 }
 
 .search_block{
@@ -449,19 +449,20 @@ MAIN
 	height: 35px;
 }
 
-.navi{
+.navi li{
 	position: relative;
 	height:100%;
 	width: auto;
 	line-height: 35px;
 	padding: 0px 15px 0px;
+	margin: 0px !important;
 	color: #fff;
 	float: left;
 	display: block;
 	cursor: pointer;
 }
 
-.navi:hover{
+.navi li:hover{
 	background-color:#f16823;
 }
 

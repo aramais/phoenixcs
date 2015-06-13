@@ -50,9 +50,9 @@ body{
 			</div>
 				<noindex>
 					<ul id="profile_menu_block">
-						<a href="accounts/{{user.username}}"><li>Мой профиль</li></a>
-						<a href="/id/1/edit"><li>Редактировать профиль</li></a>
-						<li>Настройки аккаунта</li>
+						<a href="/accounts/{{user.username}}"><li>Мой профиль</li></a>
+						<a href="/accounts/{{user.username}}/edit"><li>Редактировать профиль</li></a>
+						<a href="/accounts/{{user.username}}/password"><li>Настройки аккаунта</li>
 						<a href="{% url 'userena_signout' %}"><li>Выйти</li></a>
 					</ul>
 				</noindex>
@@ -71,12 +71,27 @@ body{
 			</div>
 			<noindex>
 				<div id="login_block" class="cf">
-					<div class="log_header">Логин:</div>
-					<input class="log_input" placeholder="Ваш e-mail">
-					<div class="log_header" style="margin-top:10px">Пароль:</div>
-					<input class="log_input" placeholder="Ваш пароль" type="password">
-					<a href="/id/1"><button class="button log_enter_button" type="submit">Войти</button></a>
-					<a href="{% url 'userena_password_reset' %}" class="log_link">Забыл пароль</a>
+					<form action="" method="post">
+			        {% csrf_token %}
+			          {{ form.non_field_errors }}
+			          {% for field in form %}
+			          {{ field.errors }}
+			          {% comment %} Displaying checkboxes differently {% endcomment %}
+			          {% if field.name == 'remember_me' %}
+			          <p class="checkbox">
+			          <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
+			          </p>
+			          {% else %}
+			          <p>
+			          <div class="logpage_element_header">{{ field.label_tag }}</div>
+			          {{ field }}
+			          </p>
+			          {% endif %}
+			          {% endfor %}
+			        <button class="button" style="margin:20px auto" type="submit">Войти</button>
+			        <p class="forgot-password" style="text-align:center"><a class="log_link" href="{% url 'userena_password_reset' %}">Забыл пароль</a></p>
+			        {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+			      </form>
 					<a href="{% url 'userena_signup' %}" class="log_link">Регистрация</a>
 				</div>
 			</noindex>
@@ -88,22 +103,14 @@ body{
 	</div>
 
 	<div class="post_header">
-		<div class="main">
-			<a class="navi" href="/news">
-				Новости
-			</a>
-			<div class="navi">
-				Обсуждения
-			</div>
-			<div class="navi">
-				Проекты
-			</div>
-			<div class="navi">
-				FAQ
-			</div>
-			<div class="navi">
-				О проекте
-			</div>
+		<div class="main cf">
+			<ul class="navi">
+				<a href="/news"><li>Новости</li></a>
+				<li>Обсуждения</li>
+				<li>Проекты</li>
+				<li>FAQ</li>
+				<li>О проекте</li>
+			</ul>
 		</div>
 	</div>
 </header>
@@ -122,8 +129,8 @@ body{
 				<a class="footer_text" href="/accounts/{{user.username}}">Личный кабинет</a>
 			{% else %}
 				<a class="footer_text" href="/accounts/signin">Личный кабинет</a>
-			{% endif %}	
-			<a class="footer_text" href="/registration">Регистрация</a>
+				<a class="footer_text" href="/registration">Регистрация</a>
+			{% endif %}				
 		</div>	
 		<div class="footer_line">
 			<span class="footer_text"><b>© 2015 Phoenix & Partners</b></span>
