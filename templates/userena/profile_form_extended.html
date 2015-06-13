@@ -7,59 +7,89 @@
 {% block content_title %}<h2>{% blocktrans with profile.user.username as username %}Account &raquo; {{ username }}{% endblocktrans %}</h2>{% endblock %}
 
 {% block content %}
-  <ul id="box-nav">
+  <!--<ul id="box-nav">
     <li class="first"><a href="{% url 'userena_profile_detail' user.username %}"><span>{% trans 'View profile' %}</span></a></li>
     <li class="selected"><a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit profile" %}</a></li>
     <li><a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %}</a></li>
     <li class="last"><a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %}</a></li>
   </ul>
-</br>
-<H1> Редактирование резюме </H1>
+</br>-->
 
-<H2> Опыт работы </H2>
-<form method="post" action="">
-	{% csrf_token %}
-    {{formSetProfExp.management_form}}
-    <div class = "table1">
-        {% for form in formSetProfExp %}
-         <div class = "tr">
-        {{ form.as_table }}
-        </div>
-        {% endfor %}
-    </div>
-    <input type="button" value="Добавить ещё опыт работы" id="add_more_1">
-    <input type="submit" value="Сохранить опыт работы" />
-</form>
 
-<H2> Проектная деятельность </H2>
-<form method="post" action="">
-	{% csrf_token %}
-    {{formSetProjExp.management_form }}
-    <div class = "table2">
-        {% for form in formSetProjExp %}
-         <div class = "tr">
-        {{ form.as_table }}
-        </div>
-        {% endfor %}
+<div class="edit_profile_back">
+    <div class="main">
+        <h1 class="h1_edit_profile"> Редактирование профиля</h1>
+        <p class="p_back">Пожалуйста, заполняйте данные о себе максимально подробно так, как будто вы заполняете свое резюме для подачи на работу, ведь по сути это правда: ваш профиль просматривают hr-менеджеры различных компаний</p>
     </div>
-    <input type="button" value="Добавить ещё проекты" id="add_more_2">
-    <input type="submit" value="Сохранить проекты" />
-</form>
+</div>
 
-<H2> Награды </H2>
-<form method="post" action="">
-	{% csrf_token %}
-    {{formSetAwards.management_form }}
-    <div class = "table3">
-        {% for form in formSetAwards %}
-         <div class = "tr">
-        {{ form.as_table }}
+<div class="block white">
+    <div class="main">
+        <aside class="sidebar">
+            <div class="categories" style="margin-top:0px">
+                <a class="category" href="#experience">Опыт работы</a>
+                <a class="category" href="#projects">Проекты</a>
+                <a class="category" href="#skills">Навыки</a>
+                <a class="category" href="#achievements">Достижения</a>
+                <a class="category" href="#edu">Образование</a>
+            </div>
+        </aside>
+        <div class="content">
+
+            <div id="experience">
+                <H2> Опыт работы </H2>
+                <form method="post" action="">
+                	{% csrf_token %}
+                    {{formSetProfExp.management_form}}
+                    <div class = "table1">
+                        {% for form in formSetProfExp %}
+                         <div class = "tr">
+                        {{ form.as_table }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="edit_add" type="button" id="add_more_1">+ Добавить</div>
+                    <button class="button" type="submit" value="Сохранить опыт работы">Сохранить</button>
+                </form>
+            </div>
+
+            <div id="projects">
+                <H2> Проектная деятельность </H2>
+                <form method="post" action="">
+                	{% csrf_token %}
+                    {{formSetProjExp.management_form }}
+                    <div class = "table2">
+                        {% for form in formSetProjExp %}
+                         <div class = "tr">
+                        {{ form.as_table }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="edit_add" type="button" value="Добавить ещё проекты" id="add_more_2">+ Добавить</div>
+                    <button class="button" type="submit" value="Сохранить проекты">Сохранить</button>
+                </form>
+            </div>
+
+            <div id="achievements">
+                <H2>Награды и достижения</H2>
+                <form method="post" action="">
+                	{% csrf_token %}
+                    {{formSetAwards.management_form }}
+                    <div class = "table3">
+                        {% for form in formSetAwards %}
+                         <div class = "tr">
+                        {{ form.as_table }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="edit_add" type="button" value="Добавить ещё награды" id="add_more_3">+ Добавить</div>
+                    <button class="button" type="submit" value="Сохранить награды">Сохранить</div>
+                </form>
+            </div>
         </div>
-        {% endfor %}
     </div>
-    <input type="button" value="Добавить ещё награды" id="add_more_3">
-    <input type="submit" value="Сохранить награды" />
-</form>
+</div> 
+
 
 <script>
     $('#add_more_1').click(function() {
