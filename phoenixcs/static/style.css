@@ -1187,6 +1187,19 @@ ul.skills_list{
 	color: #666;
 }
 
+.input_standard, .required{
+	position: relative;
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	vertical-align: middle;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 5px 0 5px 0;
+	font-size: 14px;
+}
+
 /*.edit_personal_detail_block{
 	padding: 20px;
 	width: 580px;
@@ -1233,19 +1246,6 @@ ul.skills_list{
 	border-radius: 3px;
 	margin: 10px 0 10px 0;
 	font-size: 18px;
-}
-
-.input_standard, .required{
-	position: relative;
-	display: inline-block;
-	padding: 0 10px 0 10px;
-	vertical-align: middle;
-	height: 32px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	margin: 5px 0 5px 0;
-	font-size: 14px;
 }
 
 .input_small{
