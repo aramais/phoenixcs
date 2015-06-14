@@ -9,17 +9,35 @@
 {% block content %}
 
 <form action="" enctype="multipart/form-data" method="post">
-  <ul id="box-nav">
-    <li class="first"><a href="{% url 'userena_profile_detail' user.username %}"><span>{% trans 'View profile' %}</span></a></li>
-    <li class="selected"><a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit profile" %}</a></li>
-    <li><a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %}</a></li>
-    <li class="last"><a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %}</a></li>
-  </ul>
-  {% csrf_token %}
-  <fieldset>
-    <legend>{% trans "Edit Profile" %}</legend>
-    {{ form.as_p }}
-  </fieldset>
-  <input type="submit" value="{% trans "Save changes" %}" />
+<div class="edit_profile_back">
+    <div class="main">
+        <h1 class="h1_edit_profile"> Редактирование профиля</h1>
+        <p class="p_back">Пожалуйста, заполняйте данные о себе максимально подробно так, как будто вы заполняете свое резюме для подачи на работу, ведь по сути это правда: ваш профиль просматривают hr-менеджеры различных компаний</p>
+    </div>
+</div>
+
+<div class="block white">
+  <div class="main">
+    <aside class="sidebar">
+        <div class="categories" style="margin-top:0px">
+            <a class="category" href="extra#experience">Опыт работы</a>
+            <a class="category" href="extra#projects">Проекты</a>
+            <a class="category" href="extra#skills">Навыки</a>
+            <a class="category" href="extra#achievements">Достижения</a>
+            <a class="category" href="extra#edu">Образование</a>
+        </div>
+    </aside>
+    <div class="content">
+      {% csrf_token %}
+      <div class="main">
+        <div id="personal_data">
+          <h2>Персональные данные</h2>
+          {{ form.as_p }}
+          <button class="button" type="submit" value="{% trans "Save changes" %}">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </form>
 {% endblock %}

@@ -60,7 +60,11 @@ function deletecomment(id) {
 					<img src="{{STATIC_URL}}phoenixcs_logo_short.jpg" height="50">
 				</div>
 				<div class="header_comment">
+					{% if user.is_authenticated %}
+					<h3 class="author medium_font"><a href="/accounts/{{comment.user}}">{{comment.user_name}}</a></h3>
+					{% else %}
 					<h3 class="author medium_font">{{comment.user_name}}</h3>
+					{% endif %}
 					<div class="date small_font">{{comment.submit_date}}</div>
 				</div>
 				{% if user == comment.user %}
@@ -96,7 +100,7 @@ function deletecomment(id) {
 		</form>
 		{% else %}
 		</br>
-		<p>Пожалуйста, <a href="{% url 'userena_signin' %}">войдите</a> или <a href="{% url 'userena_signup' %}">зарегистрируйтесь</a>, чтобы оставить комментарий.</p>
+		<p>Пожалуйста, <a href="{% url 'userena_signin' %}" class="text_link">войдите</a> или <a href="{% url 'userena_signup' %}" class="text_link">зарегистрируйтесь</a>, чтобы оставить комментарий.</p>
 		{% endif %}
 	</div>
 </div>

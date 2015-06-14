@@ -50,7 +50,7 @@ body{
 			</div>
 				<noindex>
 					<ul id="profile_menu_block">
-						<a href="/accounts/{{user.username}}"><li>Мой профиль</li></a>
+						<a href="/accounts/{{user.username}}/cv"><li>Мой профиль</li></a>
 						<a href="/accounts/{{user.username}}/edit"><li>Редактировать профиль</li></a>
 						<a href="/accounts/{{user.username}}/password"><li>Настройки аккаунта</li>
 						<a href="{% url 'userena_signout' %}"><li>Выйти</li></a>
@@ -61,8 +61,8 @@ body{
 				<img src="{{STATIC_URL}}icons/message.svg" width="35px" class="opacity07">
 				<div class="message_notif">1</div>
 			</a>
-			<a href="accounts/{{user.username}}" class="loged_ava">
-				<img src="/id/1/main.jpg" width="45px">
+			<a href="/accounts/{{user.username}}" class="loged_ava">
+				<img src="{{ profile.get_mugshot_url }}" width="45px">
 			</a>
 
 			{% else %}
@@ -126,9 +126,9 @@ body{
 			<a class="footer_text" href="/">Главная</a>
 			<a class="footer_text" href="/news">Новости и статьи</a>
 			{% if user.is_authenticated %}
-				<a class="footer_text" href="/accounts/{{user.username}}">Личный кабинет</a>
+				<a class="footer_text" href="/accounts/{{user.username}}">Моя страница</a>
 			{% else %}
-				<a class="footer_text" href="/accounts/signin">Личный кабинет</a>
+				<a class="footer_text" href="/accounts/signin">Войти</a>
 				<a class="footer_text" href="/registration">Регистрация</a>
 			{% endif %}				
 		</div>	

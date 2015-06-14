@@ -181,9 +181,10 @@ MAIN
 }
 
 .header{
+	position: relative;
 	width: 100%;
 	height:65px;
-	background-color: white;
+	background-color: #fff;
 	z-index: 1; 
 	/*position: fixed;*/
 }
@@ -1041,7 +1042,7 @@ img.blur {
 	list-style: none;
 }
 
-#experience, #projects, #skills, #achievements, #edu, #communities, .post{
+#experience, #projects, #skills, #achievements, #edu, #communities, #personal_data, .post{
 	position: relative;
 	display: block;
 	margin-bottom: 20px;
@@ -1156,7 +1157,7 @@ ul.skills_list{
 	position: relative;
 	display: block;
 	padding:20px 0px 0px;
-	background: url(materials/edit_profile_back.jpg) no-repeat;
+	background: url(materials/edit_profile_back.jpg) no-repeat bottom center fixed;
 	width: 100%;
 	height:330px;
 	color: #fff;
@@ -1164,6 +1165,7 @@ ul.skills_list{
 
 .h1_edit_profile{
 	margin-top:180px;
+	margin-left: 20px;
 	font-size: 50px;
 	text-transform: uppercase;
 	margin-bottom: 5px;
@@ -1171,6 +1173,7 @@ ul.skills_list{
 
 .p_back{
 	width: 75%;
+	margin-left: 20px;
 }
 
 .edit_add{
@@ -1403,7 +1406,7 @@ a.footer_text:hover{
 ================================
 */
 
-.author{
+.author, .author a{
 	position: relative;
 	display: block;
 	color: #666;
@@ -1411,6 +1414,10 @@ a.footer_text:hover{
 	height: auto;
 	margin:5px 0px 5px;
 	font-weight: bold;
+}
+
+.author a:hover{
+	color: #333;
 }
 
 .header_post_block {
@@ -1580,7 +1587,7 @@ textarea.comments_input{
 	display: block;
 	width: 100%;
 	height: auto;
-	background: url(materials/reg_back.jpg) center no-repeat;
+	background: url(materials/reg_back.jpg) center center no-repeat fixed;
 	padding-bottom: 30px;
 }
 
@@ -1695,7 +1702,7 @@ select.reg_class{
 	display: block;
 	width: 100%;
 	height: 650px;
-	background: url(materials/login_back.jpg) center no-repeat;
+	background: url(materials/login_back.jpg) top center no-repeat fixed;
 }
 
 .logpage_block{
@@ -1708,7 +1715,7 @@ select.reg_class{
 	margin-left: -300px;
 	width: 560px;
 	height: auto;
-	background: rgba(255,255,255,.8);
+	background: rgba(255,255,255,.85);
 }
 
 .login_sector{
@@ -1743,4 +1750,47 @@ select.reg_class{
 	vertical-align: middle;
 
 }
+
+
+/*
+=============
+SIGN OUT PAGE
+=============
+*/
+
+.signout_back{
+	margin-top:-100px;
+	background: url(materials/signout_back.jpg) no-repeat center center fixed;
+	height: 100vh;
+	text-align: center;
+	z-index: -2 !important;
+}
+
+.bye_text{
+	position: relative;
+	top:50vh;
+	margin-top: -58px;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.static_image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.image_inside {
+	height: 1024px;
+	width: 100%;
+	background: url(materials/signout_back.jpg);
+}
+
 
