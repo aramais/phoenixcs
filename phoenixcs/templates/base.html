@@ -73,8 +73,8 @@ body{
 				<div id="login_block" class="cf">
 					<form action="" method="post">
 			        {% csrf_token %}
-			          {{ form.non_field_errors }}
-			          {% for field in form %}
+			          {{ login_form_for_vypadashka.non_field_errors }}
+			          {% for field in login_form_for_vypadashka %}
 			          {{ field.errors }}
 			          {% comment %} Displaying checkboxes differently {% endcomment %}
 			          {% if field.name == 'remember_me' %}

@@ -48,7 +48,7 @@ def include_login_form(request):
 
     if not extra_context: extra_context = dict()
     return {
-        'form': form,
+        'login_form_for_vypadashka': form,
         'next': request.REQUEST.get(redirect_field_name),
     }
     # return ExtraContextTemplateView.as_view(template_name=template_name,
