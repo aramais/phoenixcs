@@ -129,7 +129,7 @@ body{
 				<a class="footer_text" href="/accounts/{{user.username}}">Моя страница</a>
 			{% else %}
 				<a class="footer_text" href="/accounts/signin">Войти</a>
-				<a class="footer_text" href="/registration">Регистрация</a>
+				<a class="footer_text" href="{% url 'userena_signup' %}">Регистрация</a>
 			{% endif %}				
 		</div>	
 		<div class="footer_line">

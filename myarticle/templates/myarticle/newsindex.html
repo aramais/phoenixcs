@@ -31,7 +31,24 @@
 <div class="news">
 	<div class="main" lang="ru">
 		<center><div class="h1_pseudo">Последние новости</div></center>
-			{% include "myarticle/articleslistwidget.html" %}
+			{% for article in articles %}
+			<a href="{%url 'myarticle:detailedArticleByUrl' article.url %}" class="news_block">
+				<div class="hidder"></div>
+				<div class="news_sample">
+					<div class = "img_news">
+						<img class="img_news_settings" src="{{STATIC_URL}}{{article.image}}">
+					</div>
+					<div class="news_header">
+						<div class="header_news">{{article.title|upper}}</div>
+					</div>
+					<div class="news_date">{{article.date}}</div>
+					<div class="news_announce">
+						{{ article.text|striptags|truncatewords:"55"}}
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+			{% comment %}{% show_more %}{% endcomment %}
 		<a href="/news"><div class="show_more">
 			<div class="show_more_enter">Показать еще</div>
 		</div></a>

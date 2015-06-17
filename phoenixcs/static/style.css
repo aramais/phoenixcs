@@ -185,7 +185,7 @@ MAIN
 	width: 100%;
 	height:65px;
 	background-color: #fff;
-	z-index: 1; 
+	z-index: 5; 
 	/*position: fixed;*/
 }
 
@@ -448,6 +448,7 @@ MAIN
 	width: 100%;
 	min-width: 1020px;
 	height: 35px;
+	z-index: 1;
 }
 
 .navi li{
@@ -1776,21 +1777,41 @@ SIGN OUT PAGE
 	font-weight: bold;
 }
 
-.static_image {
-	position: absolute;
-	left: 0;
-	top: 0;
+
+/*
+================
+CHANGE PASS PAGE
+================
+*/
+
+.change_pass_back{
+	position: relative;
+	display: block;
+	margin-top: -100px;
+	width: 100%;
+	min-height: 500px;
+	height: 100vh;
+	box-sizing:border-box;
+	-web-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	text-align: center;
+	background: url(materials/change_pass_back.jpg) no-repeat bottom center fixed;
+	padding: 120px 0px 0px;
 	z-index: 0;
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
 }
 
-.image_inside {
-	height: 1024px;
-	width: 100%;
-	background: url(materials/signout_back.jpg);
+.change_pass_block{
+	position: relative;
+	display: block;
+	margin: 0px auto;
+	top:30vh;
+	margin-top: -60px;
+	background: rgba(255,255,255,0.8);
+	box-sizing:border-box;
+	-web-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	padding: 20px;
+	width:500px;
 }
 
 
