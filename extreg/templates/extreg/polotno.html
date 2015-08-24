@@ -1,0 +1,56 @@
+<html> 
+<head> 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+// функция, чтобы затемнить страницу и подгрузить форму
+function jsfunction(){
+
+	$.ajax({
+		type: 'GET',
+		url: 'reg_form_event',
+		data: '',
+		success: function(response) {
+			// здесь затемняем страницу и делаем прочие приятные изменения. В данном случае я просто заполняю innerHtml
+			$('#theform_container').html(response);
+		},
+		error:  function(xhr, str){
+			$('#theform_container').html("There was an error: " + str);
+		}
+	});
+}
+// функция, чтобы попробовать отправить содержимое формы на сервер
+function try_to_submit() {
+	var msg   = $('#theform').serialize();
+	$.ajax({
+		type: 'POST',
+		url: 'reg_form_event',
+		data: msg,
+		success: function(response) {
+			if (response == 'OKEY') {
+				$('#theform_container').html("Your request to PCS has been submitted!");
+				// вместо этого растемнить страницу назад
+			} else {
+				// джанго выплюнул форму - она ему не понравилась, надо дозаполнить
+				$('#theform_container').html(response + "<div>Fill all the required fields! </div>");
+			}
+		},
+		error:  function(xhr, str){
+			$('#theform_container').html("There was an error: " + str);
+		}
+	});
+}
+/* {% include "extreg/reg_mer_form.html" %} */
+</script>
+</head> 
+<body>
+<div id = "theform_container">
+
+</div>
+
+<a onclick="jsfunction()" href="javascript:void(0);">Register!</a>
+</body>
+
+
+
