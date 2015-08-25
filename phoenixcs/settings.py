@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'myarticle',
     #'clear_cache',
     'redactor',
+    'extreg',
 )
 
 REDACTOR_OPTIONS = {'lang': 'en'}

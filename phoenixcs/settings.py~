@@ -34,11 +34,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-	'endless_pagination',
-	'userena.contrib.umessages',
-	'fluent_comments',
-	'crispy_forms',
-	'django_comments',
+    'endless_pagination',
+    'userena.contrib.umessages',
+    'fluent_comments',
+    'crispy_forms',
+    'django_comments',
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',
@@ -53,12 +53,10 @@ INSTALLED_APPS = (
     'guardian',
     'easy_thumbnails',
     'accounts',
-	'myarticle',
-	#'clear_cache',
-	'redactor',
+    'myarticle',
+    #'clear_cache',
+    'redactor',
 )
-
-COMMENTS_APP = 'fluent_comments'
 
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'
@@ -112,15 +110,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = ''
+#STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR,"phoenixcs/static"),
+    os.path.join(BASE_DIR,"phoenixcs/static"),
 ) 
-
-MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static")
-MEDIA_URL = "/phoenixcs/static/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"phoenixcs/static/media/")
+MEDIA_URL = "/static/media/"
 
 # David. Had problems with hashing.
+# You meant caching?
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
@@ -143,6 +142,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
+    'phoenixcs.context_processors.include_login_form'
 )
 
 
@@ -157,3 +157,11 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  
 EMAIL_HOST_USER = 'phoenixandpartnersnoreply@gmail.com'  
 EMAIL_HOST_PASSWORD = 'atanas1234'  
+
+# pip install django-userena
+# pip install python2.7-dev
+# pip install django-wysiwyg-redactor
+# pip install django-fluent-comments
+# pip install django-contrib-comments
+# pip install django-endless-pagination
+# git config --global core.excludesfile .gitignore

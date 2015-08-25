@@ -6,13 +6,23 @@
 
 // функция, чтобы затемнить страницу и подгрузить форму
 function jsfunction(){
-
 	$.ajax({
 		type: 'GET',
 		url: 'reg_form_event',
 		data: '',
 		success: function(response) {
 			// здесь затемняем страницу и делаем прочие приятные изменения. В данном случае я просто заполняю innerHtml
+			//$('#theform_container').dialog({ modal: true });
+			var maskHeight = $(document).height();
+			var maskWidth = $(window).width();
+			//Set heigth and width to mask to fill up the whole screen
+			$('#mask').css({'width':'100%','height':'100%', 'top':0, 'left':0, 'z-index': 999, 'position':'fixed', 'opacity':0.6, 'background-color':'black'});
+
+			//transition effect     
+			//$('#mask').fadeIn(1000);    
+			//$('#mask').fadeTo("slow",0.5);
+
+			$('#theform_container').css({'z-index': 1000, 'position':'absolute', 'background-color':'white', 'border':'4px double black'});
 			$('#theform_container').html(response);
 		},
 		error:  function(xhr, str){
@@ -30,6 +40,8 @@ function try_to_submit() {
 		success: function(response) {
 			if (response == 'OKEY') {
 				$('#theform_container').html("Your request to PCS has been submitted!");
+				$('#theform_container').css({'z-index': 1000, 'position':'absolute', 'background-color':'white', 'border':'none'});
+				$('#mask').css({'width':0,'height':0});
 				// вместо этого растемнить страницу назад
 			} else {
 				// джанго выплюнул форму - она ему не понравилась, надо дозаполнить
@@ -41,15 +53,16 @@ function try_to_submit() {
 		}
 	});
 }
-/* {% include "extreg/reg_mer_form.html" %} */
 </script>
 </head> 
 <body>
-<div id = "theform_container">
-
-</div>
-
+Lorem ipsum
+<br>
 <a onclick="jsfunction()" href="javascript:void(0);">Register!</a>
+<br>
+Dolor ololor
+<div id = "mask"></div>
+<div id = "theform_container"></div>
 </body>
 
 

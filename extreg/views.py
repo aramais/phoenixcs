@@ -9,6 +9,7 @@ def viewExtReg(request):
 	if request.method == 'POST':
 		form = preliminaryRegistrationForm(request.POST)
 		if form.is_valid():
+			form.save()
 			return HttpResponse('OKEY')
 		else:
 			return render(request, 'extreg/reg_mer_form.html', {'form':form})
