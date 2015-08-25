@@ -2,6 +2,7 @@
     {% csrf_token %}
  	<table>
 	{% for field in form %}
+		{% if field.name != "qualifier" %}
 		<tr{% if field.errors %} class="errors" {% endif%}>
 		  <th>
 		    <label for="id_{{ field.name }}">{{ field.label }}{% if field.field.required %}<span class="required">*</span>{% endif %}:</label>
@@ -13,7 +14,9 @@
 		    {% endif %}
 		  </td>
 		</tr>
+		{% endif %}
 	{% endfor %}
 	</table>
+	<input id="id_qualifier" name="qualifier" type="hidden" value="main" />
 </form>
 

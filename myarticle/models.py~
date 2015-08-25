@@ -3,7 +3,7 @@
 from django.db import models
 from datetime import date
 from django.core.urlresolvers import reverse
-
+from django.utils import timezone.now
 
 class Category(models.Model):
 	text = models.CharField(max_length=200, default = "Not categorized")
@@ -16,7 +16,7 @@ class Article(models.Model):
 	url = models.SlugField(max_length=50, unique = True)
 	text = models.TextField()
 	image = models.ImageField(upload_to='images', default = 'images/default.jpg')
-	date = models.DateField(default = date.today())
+	date = models.DateField(default = timezone.now)
 	author = models.CharField(max_length=200, default = "author unknown")
 	category = models.ForeignKey(Category, default = 0)
 	visible = models.BooleanField(default = False)

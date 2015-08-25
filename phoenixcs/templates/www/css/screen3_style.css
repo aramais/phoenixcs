@@ -1,0 +1,97 @@
+/*----------------- Экран 3 --------------------*/
+#screen3 {
+	position: absolute;
+	top: 1520px; /* 760 x 2 */
+	left: 0px;
+	
+}
+
+#screen3bg  {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	background-color: #4b4d39;
+	width: 1180px;
+	height: 970px;
+}
+
+#PhoenixCaseSchoolExplained {
+	position: absolute;
+	
+	text-align: center;
+	
+	line-height: 1.2em;
+	font-size: 26px;
+	width: 1300px;
+	
+	display: table;
+}
+
+.Italic {
+	font-family: MyriadProItalic;
+}
+
+.Bold {
+	font-family: MyriadProBold;
+}
+/*-----------------------------------------------*/
+
+#column1{/* Управление положением целого блока*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#column2{/* Управление положением целого блока*/
+	position: absolute;
+	top: 0px;
+	left: 300px;
+
+}
+
+#column3{/* Управление положением целого блока*/
+	position: absolute;
+	top: 0px;
+	left: 600px;
+
+}
+
+#column4{/* Управление положением целого блока*/
+	position: absolute;
+	top: 0px;
+	left: 900px;
+
+}
+.columnIllustration{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+.columnTitle {
+	position: absolute;
+	top: 230px;
+	left: 0px;
+	
+	font-size: 18px;
+	color: #f26722;
+	
+	text-align: center;
+	
+	width: 300px;
+}
+
+.columnDescription {
+	position: absolute;
+	top: 260px;
+	left: 0px;
+	
+	font-size: 18px;
+	color: #000000;
+	
+	text-align: left;
+	
+	width: 270px;
+}

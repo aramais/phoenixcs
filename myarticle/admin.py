@@ -12,6 +12,7 @@ class ArticleAdminForm(forms.ModelForm):
         widgets = {
            'text': RedactorEditor(),
         }
+	exclude = []
 
 class TagEdgeInline(admin.StackedInline):
 	model = TagEdge

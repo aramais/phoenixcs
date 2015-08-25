@@ -8,6 +8,8 @@ from extreg.models import preliminaryRegistration, preliminaryRegistrationForm
 def viewExtReg(request):
 	if request.method == 'POST':
 		form = preliminaryRegistrationForm(request.POST)
+		tmp = form.is_valid()
+		request.session['registration_form_data'] = form.cleaned_data
 		if form.is_valid():
 			form.save()
 			return HttpResponse('OKEY')
@@ -15,8 +17,19 @@ def viewExtReg(request):
 			return render(request, 'extreg/reg_mer_form.html', {'form':form})
 	else:
 		form = preliminaryRegistrationForm({})
+		if 'registration_form_data' in request.session:
+			form = preliminaryRegistrationForm(request.session['registration_form_data'])
 		return render(request, 'extreg/reg_mer_form.html', {'form':form})
 
 def polotno(request):
-	form = preliminaryRegistrationForm()
-	return render(request, 'extreg/polotno.html', {'form':form})
+	if request.method == 'POST':
+		form = preliminaryRegistrationForm(request.POST)
+		tmp = form.is_valid()
+		request.session['registration_form_data'] = form.cleaned_data
+	else:
+		form = preliminaryRegistrationForm()
+	seen = 0
+	if 'registration_form_data' in request.session:
+			seen = 1
+			form = preliminaryRegistrationForm(request.session['registration_form_data'])
+	return render(request, 'extreg/polotno.html', {'form':form, 'seen': seen})

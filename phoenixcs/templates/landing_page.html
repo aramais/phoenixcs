@@ -44,7 +44,7 @@ function close_reg_form() {
 }
 
 // функция, чтобы затемнить страницу и подгрузить форму
-function jsfunction(){
+function theform_popup_show(qualifier){
 	$.ajax({
 		type: 'GET',
 		url: 'registration/reg_form_event',
@@ -63,6 +63,7 @@ function jsfunction(){
 
 			$('#theform_popup').css({'visibility':'visible'});
 			$('#theform_container').html(response);
+			$('#id_qualifier').val(qualifier);
 		},
 		error:  function(xhr, str){
 			$('#theform_container').html("Произошла ошибка загрузки формы: " + str);
@@ -97,15 +98,10 @@ function try_to_submit() {
 <body>
 <div>
 	Lorem ipsum
-	<div onClick="jsfunction()" href="javascript:void(0);">Зарегистрироваться</div>
+	<div onClick="theform_popup_show('main')" href="javascript:void(0);">Зарегистрироваться</div>
+	<div onClick="theform_popup_show('m1')" href="javascript:void(0);">Зарегистрироваться на мероприятие</div>
+	<div onClick="theform_popup_show('z1')" href="javascript:void(0);">Зарегистрироваться на заочку</div>
 	Dolor ololor
-	<div id = "theform_mask"}></div>
-	<div id = "theform_popup">
-		<div id = "theform_required_fields"></div>
-		<div id = "theform_container">Произошла ошибка загрузки формы</div>
-		<div id = "theform_submit" onClick = "try_to_submit()">Зарегистрироваться</div>
-		<div id = "theform_close" onClick = "close_reg_form()">Закрыть</div>
-	</div>
 </div>
 </body>
 

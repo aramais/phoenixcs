@@ -58,10 +58,11 @@ class AwardsForm(ModelForm):
 	award = forms.CharField(label='Награда')
 	awarddate = forms.DateField(label='Дата награды', widget = SelectDateWidget)
 	exclusion = ['profile']
+	exclude = ['profile']
 	class Meta:
 		model = Awards
 		# exclude() didn't work, so I made a workaround here and in forms below.
-        exclude = exclusion
+        	exclude = ['profile']
 	def __init__(self, *args, **kwargs):
 		super(AwardsForm, self).__init__(*args, **kwargs)
 		lol = [self.fields.pop(f) for f in self.fields.keys() if f in self.exclusion]
@@ -72,8 +73,10 @@ class ProfExpForm(ModelForm):
 	jobstart = forms.DateField(label='Начало работы', widget = SelectDateWidget)
 	jobend = forms.DateField(label='Начало работы', widget = SelectDateWidget)
 	jobdescription = forms.CharField(label='Описание работы')
+	exclude = exclusion
 	class Meta:
 		model = Profile_Experience
+		exclude = ['profile']
 	def __init__(self, *args, **kwargs):
 		super(ProfExpForm, self).__init__(*args, **kwargs)
 		lol = [self.fields.pop(f) for f in self.fields.keys() if f in self.exclusion]
@@ -86,6 +89,7 @@ class ProjExpForm(ModelForm):
 	projectdescription = forms.CharField(label='Описание работы в проекте')
 	class Meta:
 		model = Project_Experience
+		exclude = ['profile']
 	def __init__(self, *args, **kwargs):
 		super(ProjExpForm, self).__init__(*args, **kwargs)
 		lol = [self.fields.pop(f) for f in self.fields.keys() if f in self.exclusion]

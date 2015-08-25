@@ -1,119 +1,224 @@
-{% extends 'base.html' %}
-{% block title %}Welcome to Phoenix and partners omega version!{% endblock %}
-{% block content%}
-<div class="teaser">
-	<div class="main" style="padding-top:70px">
-		<div class="description">
-			<b>Case Community Online</b>
-		</div>	
-		<div class="counters">
-			<div class="counter_block">
-				<div class="counter">
-					<span style="font-size:60px">871</span></br>
-					студент уже присоединились к нам
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="UTF-8" />
+
+<script src="static/lib/jquery-1.10.2.js"></script>
+<script src="static/lib/jquery-ui.js"></script>
+
+<link rel="stylesheet" type="text/css" href="static/css/screen1_style.css" />
+<link rel="stylesheet" type="text/css" href="static/css/screen2_style.css" />
+<link rel="stylesheet" type="text/css" href="static/css/screen3_style.css" />
+<link rel="stylesheet" type="text/css" href="static/css/stylename.css" />
+<link rel="stylesheet" type="text/css" href="static/css/registration_form_popup.css" />
+
+<script src="static/script.js"></script>
+<script src="static/scaleEventAdvert.js"></script> <!-- Экран 2 -->
+<script src="static/scaleSummary.js"></script>     <!-- Экран 3 -->
+<script src="static/scalingAndPositioning.js"></script>
+<script src="static/scripts/preliminary_registration_form.js"></script>
+
+
+<title>Phoenix Case School</title>
+</head>
+
+<body id="body">
+
+<div id="loading"></div>
+
+<div id="longWayDown">
+	<div id="screen1">
+		<div><img id="logo" src="{{STATIC_URL}}img/phoenix_logo.png"></div>
+		<div id="dayCounter" class="textBlock">Осталось 78 дней до начала обучения</div>
+		
+		<div id="signUpForTest" class="actionButton">
+			<div class="container textBlock">Записаться <br> на отбор</div>
+		</div>
+		<img id="screen1bg" src="{{STATIC_URL}}img/screen1.jpg">
+	</div>
+	<div id="screen2">
+		<div id="screen2bg"></div>
+		<div id="drawAttetionToEvents" class="textBlock">Хороший способ узнать про кейс-школу — <br>
+			прийти на любое из наших открытых мероприятий. <br>
+			Лучший способ — посетить их все.</div>
+			
+		<div id="advert1">
+			<div id="advert1Projector" class="advertProjector">
+				<div id="advert1Photo" class="advertPhoto">
+					<img id="advert1LectorPhoto" src="{{STATIC_URL}}img/nikita_event.jpg">
+				</div>
+				<img id="advert1ProjectorScreen" src="{{STATIC_URL}}img/projector_screen.png">
+			</div>
+					
+			<div id="advert1WhiteBg" class="advertWhiteBg">
+				<div id="advert1Info" class="advertInfo">
+					<div id="advert1Date" class="date">3 сентября, 17:00</div>
+					<div id="advert1EventType" class="eventType">открытая лекция</div>
+					<div id="advert1EventName" class="eventName">Философия кейс-чемпионата</div>
+					<div id="advert1LectorName" class="lectorName">ведёт Никита Киселёв</div>
+					<div id="advert1Location" class="location"><img id="advert1LocationMark" class="locationMark" src="{{STATIC_URL}}img/location_mark.png">&nbsp &nbsp м. Университет</div>
+					<div id="advert1registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="counter_block">
-				<div class="counter">
-					<span style="font-size:60px">736</span></br>
-					часов практических тренингов
+		</div>
+		
+		<div id="advert2">
+			<div id="advert2Projector" class="advertProjector">
+				<div id="advert2Photo" class="advertPhoto">
+					<img id="advert2LectorPhoto" src="{{STATIC_URL}}img/andrew_event.jpg">
+				</div>
+				<img id="advert2ProjectorScreen" src="{{STATIC_URL}}img/projector_screen.png">
+			</div>
+					
+			<div id="advert2WhiteBg" class="advertWhiteBg">
+				<div id="advert2Info" class="advertInfo">
+					<div id="advert2Date" class="date">15 сентября, 17:30</div>
+					<div id="advert2EventType" class="eventType">бизнес-игра</div>
+					<div id="advert2EventName" class="eventName">Логистический гений</div>
+					<div id="advert2LectorName" class="lectorName">ведёт Андрей Нгуен</div>
+					<div id="advert2Location" class="location"><img id="advert2LocationMark" class="locationMark" src="{{STATIC_URL}}img/location_mark.png">&nbsp &nbsp м. Китай-город</div>
+					<div id="advert2registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="counter_block">
-				<div class="counter">
-					<span style="font-size:60px">134 000</span></br>
-					мегабайт полезной информации
+		</div>
+		
+		<div id="advert3">
+			<div id="advert3Projector" class="advertProjector">
+				<div id="advert3Photo" class="advertPhoto">
+					<img id="advert3LectorPhoto" src="{{STATIC_URL}}img/sergey_event.jpg">
+				</div>
+				<img id="advert3ProjectorScreen" src="{{STATIC_URL}}img/projector_screen.png">
+			</div>
+					
+			<div id="advert3WhiteBg" class="advertWhiteBg">
+				<div id="advert3Info" class="advertInfo">
+					<div id="advert3Date" class="date">24 сентября, 19:00</div>
+					<div id="advert3EventType" class="eventType">открытая лекция</div>
+					<div id="advert3EventName" class="eventName">Школа 2.0</div>
+					<div id="advert3LectorName" class="lectorName">ведёт Сергей Сочнев</div>
+					<div id="advert3Location" class="location"><img id="advert3LocationMark" class="locationMark" src="{{STATIC_URL}}img/location_mark.png">&nbsp &nbsp м. Университет</div>
+					<div id="advert3registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="advert4">
+			<div id="advert4Projector" class="advertProjector">
+				<div id="advert4Photo" class="advertPhoto">
+					<img id="advert4LectorPhoto" src="{{STATIC_URL}}img/ayrana_event.jpg">
+				</div>
+				<img id="advert4ProjectorScreen" src="{{STATIC_URL}}img/projector_screen.png">
+			</div>
+					
+			<div id="advert4WhiteBg" class="advertWhiteBg">
+				<div id="advert4Info" class="advertInfo">
+					<div id="advert4Date" class="date">1 октября, 18:00</div>
+					<div id="advert4EventType" class="eventType">открытая лекция</div>
+					<div id="advert4EventName" class="eventName">Семь доказательств</div>
+					<div id="advert4LectorName" class="lectorName">ведёт Айрана Монгуш</div>
+					<div id="advert4Location" class="location"><img id="advert4LocationMark" class="locationMark" src="{{STATIC_URL}}img/location_mark.png">&nbsp &nbsp м. Шаболовская</div>
+					<div id="advert4registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-<div class="news">
-	<div class="main" lang="ru">
-		<center><div class="h1_pseudo">Последние новости</div></center>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample.jpg">
-				<div class="news_header">
-					<div class="header_news">Тренинг McKinsey специально для Phoenix Case School</div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					16 декабря в московском офисе McKinsey состоялось занятие организованное специально для студентов Phonex Case School. Спикером на занятии был партнер консалтинговой компании. Занятие было посвящено основным фреймворкам, используемым в презентациях.
-				</div>	
-			</div>
-		</a>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample2.jpg">
-				<div class="news_header">
-					<div class="header_news">Advanced Excel и моделирование бизнеса риселлера Apple</div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					На прошедшем 28 февраля занятии был замоделирован бизнес риселлера Apple. Бизнес представлял собой гибрид между Re:Store и успешного интернет-магазина Юлмарт. Так же на занятии началось введение в курс Advanced Excel.
-				</div>	
-			</div>
-		</a>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample3.jpg">
-				<div class="news_header">
-					<div class="header_news">Интернет-магазин Apple - стартап от PCS</div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					21 февраля начался тренинг по бизнес-моделированию - это первый тренинг в цикле business modelling. За основу был взят бизнес интернет-магазина, являющегося официальным риселлером продукции Apple. Бизнес моделировался "с нуля", горизонт прогнозирования составил 5 лет.
-				</div>	
-			</div>
-		</a>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample5.jpg">
-				<div class="news_header">
-					<div class="header_news">Phoenix Case School: участие в конкурсе Энактус, история подготовки и защиты проекта </div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					Кейс-школа Phonenix приняла участие в московском конкурсе организованном МГУ Энактус. На конкурсе были презентованы десятки проектов, которые по мнению авторов могли бы улучшить "жизнь" университета.
-				</div>	
-			</div>
-		</a>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample4.jpg">
-				<div class="news_header">
-					<div class="header_news">Прошел разбор тренировочного кейса по ресторанам</div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					 7 ферваля в стенах экономического факультета МГУ прошел общешкольный практический тренинг, на котором разбирался прошлогодний кейс по ресторанам. Была разобрана бизнес-модель, включающая 4 отдельных файла excel  с более 15 листами в каждой из них.
-				</div>	
-			</div>
-		</a>
-		<a href="news/advanced_excel/index.html" class="news_block">
-			<div class="hidder"></div>
-			<div class="news_sample">
-				<img src="materials/news_sample6.jpg">
-				<div class="news_header">
-					<div class="header_news">Последний тренинг в 2014 году: PCS Restaurants Group</div>
-				</div>
-				<div class="news_date">16.02.2014</div>
-				<div class="news_announce">
-					На тренинге был смодедирован полуфинал одного из самых сложных кейс-чемпионатов Business Diving. Студентам было предложено разработать стратегию развития ресторанной сети и провести переговоры с топ-менеджментом компании с целью выявления основных причин появления проблем.
-				</div>	
-			</div>
-		</a>
-		<div class="show_more">
-			<div class="show_more_enter">Показать еще</div>
+	<div id="screen3">
+		<div id="screen3bg"></div>
+		<div id="PhoenixCaseSchoolExplained" class="textBlock">
+			<span class="Bold">Phoenix Case School</span> — это образовательный проект для студентов и младших специалистов,<br>
+			нацеленный на формирование целостного представления о мире бизнеса.<br>
+			Наша учебная программа рассчитана на полгода и целиком состоит из <span class="Italic">очных</span> занятий.
 		</div>
+		
+		
+		<div id="column1">
+			<div id="column1Illustration" class="columnIllustration">
+				<img id="column1Icon" src="{{STATIC_URL}}img/mentorship_icon.png">
+			</div>
+			
+			<div id="column1Title" class="columnTitle">Личный ментор</div>
+			<div id="column1Description" class="columnDescription">
+				С первого дня за каждым учеником закрепляется один из менторов
+				школы. На протяжении обучения Вы полностью решите три бизнес-кейса гарвадского
+				формата под его руководством. Что бы ни случилось - ментор всегда поможет.
+			</div>
+		</div>
+
+		
+		<div id="column2">
+			<div id="column2Illustration" class="columnIllustration">
+				<img id="column2Icon" src="{{STATIC_URL}}img/trainings_icon.png">
+			</div>
+			
+
+			<div id="column2Title" class="columnTitle">Система из 24 тренингов</div>	
+			<div id="column2Description" class="columnDescription">
+				Тренинг  — это четырехчасовое групповое занятие, на котором мы глубоко
+				погружаемся в материал. На них мы разбираем матчасть, решаем полезные задачи 
+				и  отрабатываем навыки. Прослушав все тренинги Вы разовьете в себе всё 
+				многообразие навыков, необходимых  в проектной работе.
+			</div>
+		</div>
+		
+		<div id="column3">
+			<div id="column3Illustration" class="columnIllustration">
+				<img id="column3Icon" src="{{STATIC_URL}}img/partners_icon.png">
+			</div>
+			
+			<div id="column3Title" class="columnTitle">Эксклюзивные  лекции</div>
+			<div id="column3Description" class="columnDescription">
+				Кейс-школа сотрудничает с самыми разными организациями: от университетских 
+				кейс-клубов до крупных консалтинговых компаний. Это позволяет нам приглашать 
+				самых интересных спикеров. Специально для учеников школы они проводят лекции, 
+				позволяя Вам быть в курсе событий, формально находясь «снаружи» индустрии.
+			</div>
+		</div>
+		
+		<div id="column4">
+			<div id="column4Illustration" class="columnIllustration">
+				<img id="column4Icon" src="{{STATIC_URL}}img/community_icon.png">
+			</div>
+			
+			<div id="column4Title" class="columnTitle">Люди с общими целями</div>
+			<div id="column4Description" class="columnDescription">
+				Работа над кейсом — это работа в команде из четырёх человек. Но Школа - это не
+				одна команда, а множество, работающих рука об руку. Попадая к нам, Вы 
+				знакомитесь с такими же как Вы — молодыми и целеустремленными. Вместе 
+				вы сможете больше, чем поодиночке.
+			</div>
+		</div>
+		
+			
 	</div>
 </div>
 
-{% endblock %}
+<div id = "theform_mask"></div>
+<div id = "theform_popup">
+	<div id = "theform_required_fields"></div>
+	<div id = "theform_container">Произошла ошибка загрузки формы</div>
+	<div id = "theform_submit" onClick = "try_to_submit()">Зарегистрироваться</div>
+	<div id = "theform_close" onClick = "close_reg_form()">Закрыть</div>
+</div>
+<div id = "theform_popup_after">
+	<div id = "theform_popup_after_text"> Вы успешно зарегистрировались! </div>
+</div>
+
+</body>
+</html>
