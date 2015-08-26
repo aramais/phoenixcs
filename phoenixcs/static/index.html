@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="UTF-8" />
+
+<script src="lib/jquery-1.10.2.js"></script>
+<script src="lib/jquery-ui.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/screen1_style.css" />
+<link rel="stylesheet" type="text/css" href="css/screen2_style.css" />
+<link rel="stylesheet" type="text/css" href="css/screen3_style.css" />
+<link rel="stylesheet" type="text/css" href="css/stylename.css" />
+
+<script src="script.js"></script>
+<script src="scaleEventAdvert.js"></script> <!-- Экран 2 -->
+<script src="scaleSummary.js"></script>     <!-- Экран 3 -->
+<script src="scalingAndPositioning.js"></script>
+
+
+<title>Phoenix Case School</title>
+</head>
+
+<body id="body">
+
+<div id="loading"></div>
+
+<div id="longWayDown">
+	<div id="screen1">
+		<div><img id="logo" src="img/phoenix_logo.png"></div>
+		<div id="dayCounter" class="textBlock">Осталось 78 дней до начала обучения</div>
+		
+		<div id="signUpForTest" class="actionButton">
+			<div class="container textBlock">Записаться <br> на отбор</div>
+		</div>
+		<img id="screen1bg" src="img/screen1.jpg">
+	</div>
+	<div id="screen2">
+		<div id="screen2bg"></div>
+		<div id="drawAttetionToEvents" class="textBlock">Хороший способ узнать про кейс-школу — <br>
+			прийти на любое из наших открытых мероприятий. <br>
+			Лучший способ — посетить их все.</div>
+			
+		<div id="advert1">
+			<div id="advert1Projector" class="advertProjector">
+				<div id="advert1Photo" class="advertPhoto">
+					<img id="advert1LectorPhoto" src="img/nikita_event.jpg">
+				</div>
+				<img id="advert1ProjectorScreen" src="img/projector_screen.png">
+			</div>
+					
+			<div id="advert1WhiteBg" class="advertWhiteBg">
+				<div id="advert1Info" class="advertInfo">
+					<div id="advert1Date" class="date">3 сентября, 17:00</div>
+					<div id="advert1EventType" class="eventType">открытая лекция</div>
+					<div id="advert1EventName" class="eventName">Философия кейс-чемпионата</div>
+					<div id="advert1LectorName" class="lectorName">ведёт Никита Киселёв</div>
+					<div id="advert1Location" class="location"><img id="advert1LocationMark" class="locationMark" src="img/location_mark.png">&nbsp &nbsp м. Университет</div>
+					<div id="advert1registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="advert2">
+			<div id="advert2Projector" class="advertProjector">
+				<div id="advert2Photo" class="advertPhoto">
+					<img id="advert2LectorPhoto" src="img/andrew_event.jpg">
+				</div>
+				<img id="advert2ProjectorScreen" src="img/projector_screen.png">
+			</div>
+					
+			<div id="advert2WhiteBg" class="advertWhiteBg">
+				<div id="advert2Info" class="advertInfo">
+					<div id="advert2Date" class="date">15 сентября, 17:30</div>
+					<div id="advert2EventType" class="eventType">бизнес-игра</div>
+					<div id="advert2EventName" class="eventName">Логистический гений</div>
+					<div id="advert2LectorName" class="lectorName">ведёт Андрей Нгуен</div>
+					<div id="advert2Location" class="location"><img id="advert2LocationMark" class="locationMark" src="img/location_mark.png">&nbsp &nbsp м. Китай-город</div>
+					<div id="advert2registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="advert3">
+			<div id="advert3Projector" class="advertProjector">
+				<div id="advert3Photo" class="advertPhoto">
+					<img id="advert3LectorPhoto" src="img/sergey_event.jpg">
+				</div>
+				<img id="advert3ProjectorScreen" src="img/projector_screen.png">
+			</div>
+					
+			<div id="advert3WhiteBg" class="advertWhiteBg">
+				<div id="advert3Info" class="advertInfo">
+					<div id="advert3Date" class="date">24 сентября, 19:00</div>
+					<div id="advert3EventType" class="eventType">открытая лекция</div>
+					<div id="advert3EventName" class="eventName">Школа 2.0</div>
+					<div id="advert3LectorName" class="lectorName">ведёт Сергей Сочнев</div>
+					<div id="advert3Location" class="location"><img id="advert3LocationMark" class="locationMark" src="img/location_mark.png">&nbsp &nbsp м. Университет</div>
+					<div id="advert3registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="advert4">
+			<div id="advert4Projector" class="advertProjector">
+				<div id="advert4Photo" class="advertPhoto">
+					<img id="advert4LectorPhoto" src="img/ayrana_event.jpg">
+				</div>
+				<img id="advert4ProjectorScreen" src="img/projector_screen.png">
+			</div>
+					
+			<div id="advert4WhiteBg" class="advertWhiteBg">
+				<div id="advert4Info" class="advertInfo">
+					<div id="advert4Date" class="date">1 октября, 18:00</div>
+					<div id="advert4EventType" class="eventType">открытая лекция</div>
+					<div id="advert4EventName" class="eventName">Семь доказательств</div>
+					<div id="advert4LectorName" class="lectorName">ведёт Айрана Монгуш</div>
+					<div id="advert4Location" class="location"><img id="advert4LocationMark" class="locationMark" src="img/location_mark.png">&nbsp &nbsp м. Шаболовская</div>
+					<div id="advert4registrationToEvent" class="registrationToEvent actionButton">
+						<div class="container textBlock">
+							Зарегистрироваться 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="screen3">
+		<div id="screen3bg"></div>
+		<div id="PhoenixCaseSchoolExplained" class="textBlock">
+			<span class="Bold">Phoenix Case School</span> — это образовательный проект для студентов и младших специалистов,<br>
+			нацеленный на формирование целостного представления о мире бизнеса.<br>
+			Наша учебная программа рассчитана на полгода и целиком состоит из <span class="Italic">очных</span> занятий.
+		</div>
+		
+		
+		<div id="column1">
+			<div id="column1Illustration" class="columnIllustration">
+				<img id="column1Icon" src="img/mentorship_icon.png">
+			</div>
+			
+			<div id="column1Title" class="columnTitle">Личный ментор</div>
+			<div id="column1Description" class="columnDescription">
+				С первого дня за каждым учеником закрепляется один из менторов
+				школы. На протяжении обучения Вы полностью решите три бизнес-кейса гарвадского
+				формата под его руководством. Что бы ни случилось - ментор всегда поможет.
+			</div>
+		</div>
+
+		
+		<div id="column2">
+			<div id="column2Illustration" class="columnIllustration">
+				<img id="column2Icon" src="img/trainings_icon.png">
+			</div>
+			
+
+			<div id="column2Title" class="columnTitle">Система из 24 тренингов</div>	
+			<div id="column2Description" class="columnDescription">
+				Тренинг  — это четырехчасовое групповое занятие, на котором мы глубоко
+				погружаемся в материал. На них мы разбираем матчасть, решаем полезные задачи 
+				и  отрабатываем навыки. Прослушав все тренинги Вы разовьете в себе всё 
+				многообразие навыков, необходимых  в проектной работе.
+			</div>
+		</div>
+		
+		<div id="column3">
+			<div id="column3Illustration" class="columnIllustration">
+				<img id="column3Icon" src="img/partners_icon.png">
+			</div>
+			
+			<div id="column3Title" class="columnTitle">Эксклюзивные  лекции</div>
+			<div id="column3Description" class="columnDescription">
+				Кейс-школа сотрудничает с самыми разными организациями: от университетских 
+				кейс-клубов до крупных консалтинговых компаний. Это позволяет нам приглашать 
+				самых интересных спикеров. Специально для учеников школы они проводят лекции, 
+				позволяя Вам быть в курсе событий, формально находясь «снаружи» индустрии.
+			</div>
+		</div>
+		
+		<div id="column4">
+			<div id="column4Illustration" class="columnIllustration">
+				<img id="column4Icon" src="img/community_icon.png">
+			</div>
+			
+			<div id="column4Title" class="columnTitle">Люди с общими целями</div>
+			<div id="column4Description" class="columnDescription">
+				Работа над кейсом — это работа в команде из четырёх человек. Но Школа - это не
+				одна команда, а множество, работающих рука об руку. Попадая к нам, Вы 
+				знакомитесь с такими же как Вы — молодыми и целеустремленными. Вместе 
+				вы сможете больше, чем поодиночке.
+			</div>
+		</div>
+		
+			
+	</div>
+</div>
+
+
+</body>
+</html>

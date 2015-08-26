@@ -1,0 +1,77 @@
+/* CSS Document */
+@charset "UTF-8";
+
+/* для отладки */
+div {
+    #border: 2px solid green;
+}
+
+
+body { 
+    background-image: url("static/img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+	background-size:cover;/* CSS3 */
+}
+
+#logo {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+#longWayDown {
+	position: absolute;
+
+	background-color: #FFFFFF;/* белый цвет */
+	
+	font-family: MyriadProRegular;
+}
+
+.actionButton {
+	/* рамка с закругленными углами вокруг текста */
+	position: absolute;
+	
+	display: table;
+	
+	text-align: center;
+	color: #03c515;
+	
+	border: 3px solid #03c515;
+	border-radius: 5px;
+}
+
+.container{
+	/* выравнивание текста по центру по вертикали */
+	display: table-cell;	
+	vertical-align: middle;
+}
+
+.textBlock{
+	/* убрать заливку фона в div'е */
+	background-color: rgba(255, 255, 255, 0);
+}
+
+/*----------------- Экран 1 --------------------*/
+#dayCounter {
+	/*overflow: scroll;*/
+	position:absolute;
+	text-align: center;
+	
+	color: #FFFFFF;
+	font-size: 30px;
+	font-family: MyriadProRegular;
+	
+	width: 350px;
+}
+
+#signUpForTest {
+	line-height: 1.0em;
+	font-size: 20px;
+	font-family: MyriadProBold;
+	
+	width: 200px;
+	height: 50px;
+}
+/*-----------------------------------------------*/

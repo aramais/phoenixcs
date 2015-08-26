@@ -1,0 +1,133 @@
+/*----------------- Экран 2 --------------------*/
+#screen2 {
+	position: absolute;
+	top: 760px;
+	left: 0px;
+	
+}
+#screen2bg  {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	background-color: #ececec;
+	width: 1180px;
+	height: 760px;
+}
+
+#drawAttetionToEvents {
+	position: absolute;
+	
+	text-align: center;
+	
+	line-height: 1.2em;
+	font-size: 30px;
+	width: 700px;
+	
+	display: table;
+}
+
+#advert1 {/* Управление положением целого блока*/
+	position: absolute;
+	top: 100px;
+	left: 0px;
+}
+
+#advert2 {/* Управление положением целого блока*/
+	position: absolute;
+	top: 100px;
+	left: 200px;
+}
+
+#advert3 {/* Управление положением целого блока*/
+	position: absolute;
+	top: 100px;
+	left: 400px;
+}
+
+#advert4 {/* Управление положением целого блока*/
+	position: absolute;
+	top: 100px;
+	left: 600px;
+}
+
+.advertProjector {/* Положение проектора */
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.advertPhoto {/* Положение фотографии на проекторе */ 
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	
+	width: 282px;
+	height: 161px;
+}
+
+.advertWhiteBg {
+	position: absolute;
+	top: 239px;
+	left: 26px;
+	
+	background-color: #FFFFFF;
+	width: 290px;
+	height: 300px;
+}
+
+.advertInfo{
+	position: absolute;
+	
+	top: 12px;
+	left: 12px;
+}
+
+.date{
+	font-family: MyriadProRegular;
+	font-size: 24px;
+	
+	width: 270px;
+	height: 24px;
+}
+
+.eventType{
+	font-family: MyriadProRegular;
+	font-size: 16px;
+	
+	width: 270px;
+	height: 40px;
+}
+
+.eventName{
+	font-family: MyriadProBold;
+	font-size: 24px;
+	
+	width: 270px;
+	height: 65px;
+}
+
+.lectorName{
+	font-family: MyriadProRegular;
+	font-size: 16px;
+	
+	width: 270px;
+	height: 32px;
+}
+
+.location {
+	font-family: MyriadProRegular;
+	font-size: 24px;
+	
+	width: 270px;
+	height: 58px;
+}
+
+.registrationToEvent {
+	font-family: MyriadProBold;
+	font-size: 24px;
+	
+	width: 260px;
+	height: 50px;
+}
+/*-----------------------------------------------*/
