@@ -211,13 +211,16 @@
 
 <div id = "theform_mask"></div>
 <div id = "theform_popup">
+	<div id = "theform_title"></div>
 	<div id = "theform_required_fields"></div>
 	<div id = "theform_container">Произошла ошибка загрузки формы</div>
-	<div id = "theform_submit" onClick = "try_to_submit()">Зарегистрироваться</div>
-	<div id = "theform_close" onClick = "close_reg_form()">Закрыть</div>
+	<div id = "theform_bottom">
+		<div id = "theform_submit" onClick = "try_to_submit()">Зарегистрировать</div>
+		<div id = "theform_close" onClick = "return_from_registration_dialogue()">Закрыть</div>
+	</div>
 </div>
 <div id = "theform_popup_after">
-	<div id = "theform_popup_after_text"> Вы успешно зарегистрировались! </div>
+	<div id = "theform_popup_after_text" onClick = "return_from_registration_dialogue()"> Вы успешно зарегистрировались! </div>
 </div>
 
 </body>
